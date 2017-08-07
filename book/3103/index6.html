@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="sl">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../favicon.ico" />
+
+    <title>Označevanje uporov</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap-toc.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="../css/style.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Fixed navbar -->
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../index.html"><img src="../img/malina.png"></a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <div id="navigation"></div>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#license" title="Licenca" data-toggle="modal" data-target="#copyright"><span class="fa fa-creative-commons"></span> Licenca</a></li>
+                    <li><a href="../colophon.html" title="Kolofon"><span class="fa fa-print"></span> Kolofon</a></li>
+                    <li><a href="mailto:eUcbenik@lusy.fri.uni-lj.si" title="Komentar"><span class="fa fa-commenting-o"></span> Komentar</a></li>
+                    <li><a href="http://github.com/anzeljg/rpi/archive/v1.00.zip" title="Prenos"><span class="fa fa-download"></span> Prenos</a></li>
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div>
+        </nav>
+
+        <!-- Modal (popup) window: License -->
+        <div id="copyright" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Licenca</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>To delo je na voljo pod pogoji slovenske licence Creative Commons 2.5:</p>
+                        <p><strong>priznanje avtorstva - nekomercialno - deljenje pod enakimi pogoji.</strong></p>
+                        <p align="justify">Celotna licenca je na voljo na spletu na naslovu <a href="http://creativecommons.org/licenses/by-nc-sa/2.5/si/" target="_blank">http://creativecommons.org/licenses/by-nc-sa/2.5/si/</a>. V skladu s to licenco je dovoljeno vsakemu uporabniku delo razmnoževati, distribuirati, javno priobčevati, dajati v najem in tudi predelovati, vendar samo v nekomercialne namene in ob pogoju, da navede avtorja oziroma avtorje in izdajatelja tega dela. Če uporabnik delo predela, kar pomeni, da ga spremeni, preoblikuje, prevede ali uporabi to delo v svojem delu, lahko predelavo dela ponudi na voljo le pod pogoji, ki so enaki pogojem iz te licence oziroma pod enako licenco.</p>
+                        <p><img src="../img/by-nc-sa.eu.png" height="35" border="0"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Zapri</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-4">
+<!-- Left column start -->
+<nav id="toc" data-toggle="toc">
+  <ul class="nav">
+    <li><a href="index.html">Uvod v fizično računalništvo</a></li>
+    <li><a href="index1.html">Kaj je fizično računalništvo?</a></li>
+    <li><a href="index2.html">Preizkusna ploščica</a></li>
+    <li><a href="index3.html">Povezovalni kabli in žice</a></li>
+    <li><a href="index4.html">LED diode</a></li>
+    <li><a href="index5.html">Upori</a></li>
+    <li class="active"><a href="index6.html">Označevanje uporov</a></li>
+    <li><a href="index7.html">Gumbi / stikala</a></li>
+    <li><a href="index8.html">Brenčači</a></li>
+    <li><a href="sources.html">Viri</a></li>
+  </ul>
+</nav>
+<!-- Left column end -->
+                    </div>
+                    <div class="col-md-8">
+                        <br />
+<!-- Right column start -->
+<h1>Označevanje uporov</h1>
+
+<p align="justify">...</p>
+
+<style type="text/css">#strip41,#strip42,#strip43{height:66px;top:7px;width:20px}#strip51,#strip61{left:80px}#strip41,#strip52,#strip62{left:129px}#strip44,#strip55,#strip66{left:314px}.resistor_strip4,.resistor_strip5,.resistor_strip6{background-color:red;position:absolute;z-index:2}.colored-box,.resistor_strip4,.resistor_strip5,.resistor_strip6{border-color:#000;border-style:solid;border-width:1px}.bold-header,.colored-box{line-height:200%;text-align:center}.stripimg{min-width:417px;margin-left:0!important}#strip42{left:181px}#strip43{left:233px}#strip44{height:78px;top:1px;width:20px}.resistor_strip4{height:20px;width:20px}#strip52,#strip53,#strip54{height:66px;top:7px}#strip51,#strip55{height:78px;top:1px}@media (max-width:320px){.toolfont{font-size:12px}.stripimg{min-width:320px;max-width:320px}#strip41,#strip42,#strip43{height:54px;top:3px;width:15px}#strip41{left:99px}#strip42{left:139px}#strip43{left:179px}#strip44{height:60px;left:244px;top:1px;width:15px}}#strip51,#strip52{width:20px}#strip53{left:181px;width:20px}#strip54{left:233px;width:20px}#strip55{width:20px}.resistor_strip5{height:20px;width:20px}#strip62,#strip63,#strip64,#strip65{height:66px;top:7px}#strip61,#strip66{height:78px;top:1px}@media (max-width:320px){#strip52,#strip53,#strip54{height:54px;top:3px}#strip51,#strip55{height:60px;top:1px;width:15px}#strip51{left:65px}#strip52{left:99px;width:15px}#strip53{left:139px;width:15px}#strip54{left:179px;width:15px}#strip55{left:244px}}#strip61,#strip62,#strip63,#strip64,#strip65,#strip66{width:20px}#strip63{left:159px}#strip64{left:189px}#strip65{left:270px}.resistor_strip6{height:20px;width:20px}.black,.colored-box{background-color:#262323}@media (max-width:320px){#strip62,#strip63,#strip64,#strip65{height:54px;top:3px}#strip61,#strip66{height:60px;top:1px;width:15px}#strip61,#strip62,#strip63,#strip64,#strip65,#strip66{width:15px}#strip61{left:65px}#strip62{left:99px}#strip63{left:129px}#strip64{left:159px}#strip65{left:209px}#strip66{left:244px}}#wrapper{position:relative}.colored-box{color:#fff;height:100%;margin-left:5px;width:100%;cursor:pointer}.bold-header{color:#000;font-size:85%;font-weight:700;height:20px;margin-left:2px;width:55px}.black,.brown,.orange,.red{color:#FFF}.brown{background-color:#7D4302}.red{background-color:#E60514}.orange{background-color:#f26b31}.yellow{background-color:#F2EA7C;color:#000}.blue,.green,.grey,.purple{color:#FFF}.green{background-color:#3CB057}.blue{background-color:#0483DE}.purple{background-color:#9D2CA3}.grey{background-color:#595759}.gold,.silver,.white{color:#000}.white{background-color:#FFF}.gold{background-color:#D4AF37}.silver{background-color:silver}</style>
+
+<ul class="nav nav-tabs toolfont" role="tablist" id="list">
+  <li>&nbsp;&nbsp;&nbsp;</li>
+  <li class="active"><a href="#strip4tab" role="tab" data-toggle="tab">4-barvni</a></li>
+  <li><a href="#strip5tab" role="tab" data-toggle="tab">5-barvni</a></li>
+  <li><a href="#strip6tab" role="tab" data-toggle="tab">6-barvni</a></li>
+</ul>
+ 
+<div class="tab-content">
+ 
+<div class="tab-pane fade active in" id="strip4tab">
+<h3 class="inputHL">4-barvni upor</h3>
+<div id="wrapper">
+<div class="row-fluid">
+<img src="img/resistor-color-code-body-v10.png" class="stripimg" style="padding-bottom:20px" />
+<div id="strip41" class="resistor_strip4" data-val="3" style="background: #F26B31;"></div>
+<div id="strip42" class="resistor_strip4" data-val="3" style="background: #F26B31;"></div>
+<div id="strip43" class="resistor_strip4" data-val="x10" style="background: #7D4302;"></div>
+<div id="strip44" class="resistor_strip4" data-val="± 5%" style="background: #D4AF37;"></div>
+</div>
+</div>
+<div class="row visible-lg">
+<div class="col-sm-12">
+<div class="col-sm-1 col-lg-3"><span class="bold-header">Prva števka</span></div>
+<div class="col-sm-1 col-lg-3"><span class="bold-header">Druga števka</span></div>
+<div class="col-sm-1 col-lg-3"><span class="bold-header">Množitelj</span></div>
+<div class="col-sm-1 col-lg-3"><span class="bold-header">Toleranca</span></div>
+</div>
+</div>
+<div class="row">
+<div class="col-sm-12">
+<div class="col-sm-6 col-lg-3">
+<div class="form-group">
+<label for="b4d1" class="hidden-lg">Prva števka</label>
+<select class="form-control digit-picker orange" id="b4d1">
+<option class="brown" value="1">1 Rjava</option>
+<option class="red" value="2">2 Rdeča</option>
+<option class="orange" value="3" selected>3 Oranžna</option>
+<option class="yellow" value="4">4 Rumena</option>
+<option class="green" value="5">5 Zelena</option>
+<option class="blue" value="6">6 Modra</option>
+<option class="purple" value="7">7 Vijolična</option>
+<option class="grey" value="8">8 Siva</option>
+<option class="white" value="9">9 Bela</option>
+</select>
+</div>
+</div>
+<div class="col-sm-6 col-lg-3">
+<div class="form-group">
+<label for="b4d2" class="hidden-lg">Druga števka</label>
+<select class="form-control digit-picker orange" id="b4d2">
+<option class="black" value="0">0 Črna</option>
+<option class="brown" value="1">1 Rjava</option>
+<option class="red" value="2">2 Rdeča</option>
+<option class="orange" value="3" selected>3 Oranžna</option>
+<option class="yellow" value="4">4 Rumena</option>
+<option class="green" value="5">5 Zelena</option>
+<option class="blue" value="6">6 Modra</option>
+<option class="purple" value="7">7 Vijolična</option>
+<option class="grey" value="8">8 Siva</option>
+<option class="white" value="9">9 Bela</option>
+</select>
+</div>
+</div>
+<div class="col-sm-6 col-lg-3">
+<div class="form-group">
+<label for="b4d3" class="hidden-lg">Množitelj</label>
+<select class="form-control digit-picker brown" id="b4d3">
+<option class="black" value="x1">x1 Črna</option>
+<option class="brown" value="x10" selected>x10 Rjava</option>
+<option class="red" value="x100">x100 Rdeča</option>
+<option class="orange" value="x1k">x1k Oranžna</option>
+<option class="yellow" value="x10k">x10k Rumena</option>
+<option class="green" value="x100k">x100k Zelena</option>
+<option class="blue" value="x1M">x1M Modra</option>
+<option class="purple" value="x10M">x10M Vijolična</option>
+<option class="grey" value="x100M">x100M Siva</option>
+<option class="white" value="x1G">x1G Bela</option>
+<option class="gold" value="÷10">÷10 Zlata</option>
+<option class="silver" value="÷100">÷100 Srebrna</option>
+</select>
+</div>
+</div>
+<div class="col-sm-6 col-lg-3">
+<div class="form-group">
+<label for="b4d4" class="hidden-lg">Toleranca</label>
+<select class="form-control digit-picker gold" id="b4d4">
+<option class="brown" value="± 1%">± 1% Rjava</option>
+<option class="red" value="± 2%">± 2% Rdeča</option>
+<option class="orange" value="± 3%">± 3% Oranžna</option>
+<option class="yellow" value="± 4%">± 4% Rumena</option>
+<option class="green" value="± 0.5%">± 0.5% Zelena</option>
+<option class="blue" value="± 0.25%">± 0.25% Modra</option>
+<option class="purple" value="± 0.10%">± 0.10% Vijolična</option>
+<option class="grey" value="± 0.05%">± 0.05% Siva</option>
+<option class="gold" value="± 5%" selected>± 5% Zlata</option>
+<option class="silver" value="± 10%">± 10% Srebrna</option>
+</select>
+</div>
+</div>
+</div>
+</div>
+<br>
+<div class="row clearfix">
+<div class="col-sm-12">
+<div class="col-sm-2 col-xs-12">
+<div class="form-group text-left">
+<label for="b4tool_output1">Upornost:</label>
+</div>
+</div>
+<div class="col-sm-4 col-xs-8">
+<div id="tool_output_container" class="form-group">
+  <div class="input-group">
+    <input type="text" id="b4tool_output1" class="form-control" placeholder="Upornost">
+	<span class="input-group-addon">&Omega;</span>
+  </div>
+</div>
+</div>
+</div>
+</div>
+<div class="row clearfix">
+<div class="col-sm-12">
+<div class="col-sm-2 col-xs-12">
+<div class="form-group text-left">
+<label for="b4tool_output2">Toleranca:</label>
+</div>
+</div>
+<div class="col-sm-4 col-xs-8">
+<div id="tool_output_container" class="form-group">
+  <div class="input-group">
+    <input type="text" id="b4tool_output2" class="form-control" placeholder="Toleranca">
+	<span class="input-group-addon">%</span>
+  </div>
+</div>
+</div>
+</div>
+</div>
+<div class="row clearfix">
+<div class="col-sm-12">
+<div class="col-sm-2 col-xs-12">
+<div class="form-group text-left">
+<label for="b4tool_output3">Minimum:</label>
+</div>
+</div>
+<div class="col-sm-4 col-xs-8">
+<div id="tool_output_container" class="form-group">
+  <div class="input-group">
+    <input type="text" id="b4tool_output3" class="form-control" placeholder="Minimum">
+	<span class="input-group-addon">&Omega;</span>
+  </div>
+</div>
+</div>
+</div>
+</div>
+<div class="row clearfix">
+<div class="col-sm-12">
+<div class="col-sm-2 col-xs-12">
+<div class="form-group text-left">
+<label for="b4tool_output4">Maksimum:</label>
+</div>
+</div>
+<div class="col-sm-4 col-xs-8">
+<div id="tool_output_container" class="form-group">
+  <div class="input-group">
+    <input type="text" id="b4tool_output4" class="form-control" placeholder="Maksimum">
+	<span class="input-group-addon">&Omega;</span>
+  </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="tab-pane fade" id="strip5tab">
+<h3 class="inputHL">5 strip Resistor</h3>
+<div id="wrapper">
+<div class="row-fluid">
+<img src="img/resistor-color-code-body-v10.png" class="stripimg" style="padding-bottom:20px" />
+<div id="strip51" class="resistor_strip5" data-val="5" style="background-color: #3CB057;"></div>
+<div id="strip52" class="resistor_strip5" data-val="5" style="background-color: #3CB057;"></div>
+<div id="strip53" class="resistor_strip5" data-val="6" style="background-color: #0483DE;"></div>
+<div id="strip54" class="resistor_strip5" data-val="x100" style="background-color: #E60514;"></div>
+<div id="strip55" class="resistor_strip5" data-val="± 10%" style="background-color: #C0C0C0;"></div>
+</div>
+</div>
+<div class="row visible-lg">
+<div class="col-sm-12">
+<div class="col-sm-1 col-lg-2"><span class="bold-header">1st Digit</span></div>
+<div class="col-sm-1 col-lg-2"><span class="bold-header">2nd Digit</span></div>
+<div class="col-sm-1 col-lg-2"><span class="bold-header">3rd Digit</span></div>
+<div class="col-sm-1 col-lg-2"><span class="bold-header">Multiplier</span></div>
+<div class="col-sm-1 col-lg-2"><span class="bold-header">Tolerance</span></div>
+</div>
+</div>
+<div class="row">
+<div class="col-sm-12">
+<div class="col-sm-6 col-lg-2">
+<div class="form-group">
+<label for="b5d1" class="hidden-lg">1st Digit</label>
+<select class="form-control digit-picker green" id="b5d1">
+<option class="brown" value="1">1 Brown</option>
+<option class="red" value="2">2 RED</option>
+<option class="orange" value="3">3 Orange</option>
+<option class="yellow" value="4">4 Yellow</option>
+<option class="green" value="5"selected>5 Green</option>
+                         <option class="blue" value="6">6 Blue</option>
+                         <option class="purple" value="7">7 Violet</option>
+                         <option class="grey" value="8">8 Gray</option>
+                         <option class="white" value="9">9 White</option>
+                    </select>
+               </div>
+          </div>
+          <div class="col-sm-6 col-lg-2">
+               <div class="form-group">
+                  <label for="b5d2" class="hidden-lg">2nd Digit</label> 
+                    <select class="form-control digit-picker green" id="b5d2">
+                         <option class="black" value="0">0 Black</option>
+                         <option class="brown" value="1">1 Brown</option>
+                         <option class="red" value="2">2 RED</option>
+                         <option class="orange" value="3">3 Orange</option>
+                         <option class="yellow" value="4">4 Yellow</option>
+                         <option class="green" value="5" selected>5 Green</option>
+                         <option class="blue" value="6">6 Blue</option>
+                         <option class="purple" value="7">7 Violet</option>
+                         <option class="grey" value="8">8 Gray</option>
+                         <option class="white" value="9">9 White</option>
+                    </select>
+               </div>
+          </div>
+             <div class="col-sm-6 col-lg-2">
+               <div class="form-group">
+                  <label for="b5d3" class="hidden-lg">3rd Digit</label> 
+                    <select class="form-control digit-picker blue" id="b5d3">
+                         <option class="black" value="0">0 Black</option>
+                         <option class="brown" value="1">1 Brown</option>
+                         <option class="red" value="2">2 RED</option>
+                         <option class="orange" value="3">3 Orange</option>
+                         <option class="yellow" value="4">4 Yellow</option>
+                         <option class="green" value="5">5 Green</option>
+                         <option class="blue" value="6" selected>6 Blue</option>
+                         <option class="purple" value="7">7 Violet</option>
+                         <option class="grey" value="8">8 Gray</option>
+                         <option class="white" value="9">9 White</option>
+                    </select>
+               </div>
+          </div>
+          <div class="col-sm-6 col-lg-2">
+               <div class="form-group">
+                  <label for="b5d4" class="hidden-lg">Multiplier</label>  
+                    <select class="form-control digit-picker red" id="b5d4">
+                         <option class="black"  value="x1">x1 Black</option>
+                         <option class="brown"  value="x10">x10 Brown</option>
+                         <option class="red"    value="x100" selected>x100 Red</option>
+                         <option class="orange" value="x1k">x1k Orange</option>
+                         <option class="yellow" value="x10k">x10k Yellow</option>
+                         <option class="green"  value="x100k">x100k Green</option>
+                         <option class="blue"   value="x1M">x1M Blue</option>
+                         <option class="purple" value="x10M">x10M Violet</option>
+                         <option class="grey"   value="x100M">x100M Gray</option>
+                         <option class="white"  value="x1G">x1G White</option>
+                         <option class="gold"   value="÷10">÷10 Gold</option>
+                         <option class="silver" value="÷100">÷100 Silver</option>
+                    </select>
+               </div>
+          </div>
+          <div class="col-sm-6 col-lg-2">
+               <div class="form-group">
+                  <label for="b5d5" class="hidden-lg">Tolerance</label> 
+                    <select class="form-control digit-picker silver" id="b5d5">
+                         <option class="brown"  value="± 1%">± 1% Brown</option>
+                         <option class="red"    value="± 2%">± 2% Red</option>
+                         <option class="orange" value="± 3%">± 3% Orange</option>
+                         <option class="yellow" value="± 4%">± 4% Yellow</option>
+                         <option class="green"  value="± 0.5%">± 0.5% Green</option>
+                         <option class="blue"   value="± 0.25%">± 0.25% Blue</option>
+                         <option class="purple" value="± 0.10%">± 0.10% Violet</option>
+                         <option class="grey"   value="± 0.05%">± 0.05% Gray</option>
+                         <option class="gold"   value="± 5%">± 5% Gold</option>
+                         <option class="silver" value="± 10%" selected>± 10% Silver</option>
+                    </select>
+               </div>
+          </div>
+        </div>
+      </div>      
+      <br>
+      <div class="row clearfix">
+        <div class="col-sm-12">
+          <div class="col-sm-2 col-xs-12">
+            <div class="form-group text-left">
+              <label for="b5tool_output1">Resistance:</label>
+            </div> 
+          </div>
+          <div class="col-sm-4 col-xs-8">
+            <div id="tool_output_container" class="form-group">
+              <input type="text" id="b5tool_output1" class="form-control" placeholder="Resistance">
+            </div>
+          </div>      
+          <div class="col-sm-4 col-xs-4">
+            <div class="form-group text-left">ohms</div>
+          </div>      
+        </div>
+      </div>
+      <div class="row clearfix">
+        <div class="col-sm-12">
+          <div class="col-sm-2 col-xs-12">
+            <div class="form-group text-left">
+              <label for="b5tool_output2">Tolerance:</label>
+            </div> 
+          </div>
+          <div class="col-sm-4 col-xs-8">
+            <div id="tool_output_container" class="form-group">
+              <input type="text" id="b5tool_output2" class="form-control" placeholder="Tolerance">
+            </div>
+          </div>      
+          <div class="col-sm-4 col-xs-4">
+            <div class="form-group ">&nbsp;</div>
+          </div>      
+        </div>
+      </div>
+	  <div class="row clearfix">
+        <div class="col-sm-12">
+          <div class="col-sm-2 col-xs-12">
+            <div class="form-group text-left">
+              <label for="b5tool_output3">Minimum:</label>
+            </div> 
+          </div>
+          <div class="col-sm-4 col-xs-8">
+            <div id="tool_output_container" class="form-group">
+              <input type="text" id="b5tool_output3" class="form-control" placeholder="Minimum">
+            </div>
+          </div>      
+          <div class="col-sm-4 col-xs-4">
+            <div class="form-group text-left">ohms</div>
+          </div>      
+        </div>
+      </div>
+	  <div class="row clearfix">
+        <div class="col-sm-12">
+          <div class="col-sm-2 col-xs-12">
+            <div class="form-group text-left">
+              <label for="b5tool_output4">Maximum:</label>
+            </div> 
+          </div>
+          <div class="col-sm-4 col-xs-8">
+            <div id="tool_output_container" class="form-group">
+              <input type="text" id="b5tool_output4" class="form-control" placeholder="Maximum">
+            </div>
+          </div>      
+          <div class="col-sm-4 col-xs-4">
+            <div class="form-group text-left">ohms</div>
+          </div>      
+        </div>
+      </div>
+    </div>
+    
+    <div class="tab-pane fade" id="strip6tab">
+      <h3 class="inputHL">6 strip Resistor</h3>
+      <div id="wrapper">
+        <div class="row-fluid">
+          <img src="img/resistor-color-code-body-v10.png" class="stripimg" style="padding-bottom:20px" />
+          <div id="strip61" class="resistor_strip6" data-val="5" style="background-color: #3CB057;"></div>
+          <div id="strip62" class="resistor_strip6" data-val="5" style="background-color: #3CB057;"></div>
+          <div id="strip63" class="resistor_strip6" data-val="6" style="background-color: #0483DE;"></div>
+          <div id="strip64" class="resistor_strip6" data-val="x100" style="background-color: #E60514;"></div>
+          <div id="strip65" class="resistor_strip6" data-val="± 10%" style="background-color: #C0C0C0;"></div>
+          <div id="strip66" class="resistor_strip6" data-val="100" style="background-color: #7D4302;"></div>
+        </div>
+      </div>
+      <div class="row visible-lg">        
+        <div class="col-sm-12">          
+          <div class="col-sm-1 col-lg-2"><span class="bold-header">1st Digit</span></div>
+          <div class="col-sm-1 col-lg-2"><span class="bold-header">2nd Digit</span></div>
+          <div class="col-sm-1 col-lg-2"><span class="bold-header">3rd Digit</span></div>
+          <div class="col-sm-1 col-lg-2"><span class="bold-header">Multiplier</span></div>
+          <div class="col-sm-1 col-lg-2"><span class="bold-header">Tolerance</span></div>
+          <div class="col-sm-1 col-lg-2"><span class="bold-header">Tempco</span></div>
+        </div>
+      </div>
+      <div class="row"> 
+        <div class="col-sm-12">
+          <div class="col-sm-6 col-lg-2">
+               <div class="form-group">
+                  <label for="b6d1" class="hidden-lg">1st Digit</label> 
+                    <select class="form-control digit-picker green" id="b6d1">
+                         <option class="brown" value="1">1 Brown</option>
+                         <option class="red" value="2">2 RED</option>
+                         <option class="orange" value="3">3 Orange</option>
+                         <option class="yellow" value="4">4 Yellow</option>
+                         <option class="green" value="5"selected>5 Green</option>
+                         <option class="blue" value="6">6 Blue</option>
+                         <option class="purple" value="7">7 Violet</option>
+                         <option class="grey" value="8">8 Gray</option>
+                         <option class="white" value="9">9 White</option>
+                    </select>
+               </div>
+          </div>
+          <div class="col-sm-6 col-lg-2">
+               <div class="form-group">
+                  <label for="b6d2" class="hidden-lg">2nd Digit</label>   
+                    <select class="form-control digit-picker green" id="b6d2">
+                         <option class="black" value="0">0 Black</option>
+                         <option class="brown" value="1">1 Brown</option>
+                         <option class="red" value="2">2 RED</option>
+                         <option class="orange" value="3">3 Orange</option>
+                         <option class="yellow" value="4">4 Yellow</option>
+                         <option class="green" value="5" selected>5 Green</option>
+                         <option class="blue" value="6">6 Blue</option>
+                         <option class="purple" value="7">7 Violet</option>
+                         <option class="grey" value="8">8 Gray</option>
+                         <option class="white" value="9">9 White</option>
+                    </select>
+               </div>
+          </div>
+             <div class="col-sm-6 col-lg-2">
+               <div class="form-group">
+                  <label for="b6d3" class="hidden-lg">3rd Digit</label> 
+                    <select class="form-control digit-picker blue" id="b6d3">
+                         <option class="black" value="0">0 Black</option>
+                         <option class="brown" value="1">1 Brown</option>
+                         <option class="red" value="2">2 RED</option>
+                         <option class="orange" value="3">3 Orange</option>
+                         <option class="yellow" value="4">4 Yellow</option>
+                         <option class="green" value="5">5 Green</option>
+                         <option class="blue" value="6" selected>6 Blue</option>
+                         <option class="purple" value="7">7 Violet</option>
+                         <option class="grey" value="8">8 Gray</option>
+                         <option class="white" value="9">9 White</option>
+                    </select>
+               </div>
+          </div>
+          <div class="col-sm-6 col-lg-2">
+               <div class="form-group">
+                  <label for="b6d4" class="hidden-lg">Multiplier</label>  
+                    <select class="form-control digit-picker red" id="b6d4">
+                         <option class="black"  value="x1">x1 Black</option>
+                         <option class="brown"  value="x10">x10 Brown</option>
+                         <option class="red"    value="x100" selected>x100 Red</option>
+                         <option class="orange" value="x1k">x1k Orange</option>
+                         <option class="yellow" value="x10k">x10k Yellow</option>
+                         <option class="green"  value="x100k">x100k Green</option>
+                         <option class="blue"   value="x1M">x1M Blue</option>
+                         <option class="purple" value="x10M">x10M Violet</option>
+                         <option class="grey"   value="x100M">x100M Gray</option>
+                         <option class="white"  value="x1G">x1G White</option>
+                         <option class="gold"   value="÷10">÷10 Gold</option>
+                         <option class="silver" value="÷100">÷100 Silver</option>
+                    </select>
+               </div>
+          </div>
+          <div class="col-sm-6 col-lg-2">
+               <div class="form-group">
+                  <label for="b6d5" class="hidden-lg">Tolerance</label>   
+                    <select class="form-control digit-picker silver" id="b6d5">
+                         <option class="brown"  value="± 1%">± 1% Brown</option>
+                         <option class="red"    value="± 2%">± 2% Red</option>
+                         <option class="orange" value="± 3%">± 3% Orange</option>
+                         <option class="yellow" value="± 4%">± 4% Yellow</option>
+                         <option class="green"  value="± 0.5%">± 0.5% Green</option>
+                         <option class="blue"   value="± 0.25%">± 0.25% Blue</option>
+                         <option class="purple" value="± 0.10%">± 0.10% Violet</option>
+                         <option class="grey"   value="± 0.05%">± 0.05% Gray</option>
+                         <option class="gold"   value="± 5%">± 5% Gold</option>
+                         <option class="silver" value="± 10%" selected>± 10% Silver</option>
+                    </select>
+               </div>
+          </div>
+          <div class="col-sm-6 col-lg-2">
+               <div class="form-group">
+                  <label for="b6d6" class="hidden-lg">Tempco</label>  
+                    <select class="form-control digit-picker brown" id="b6d6">
+                         <option class="brown"  value="100" selected="">100 Brown</option>
+                         <option class="red"    value="50">50 Red</option>
+                         <option class="orange" value="15">15 Orange</option>
+                         <option class="yellow" value="25">25 Yellow</option>
+                         <option class="blue"   value="10">10 Blue</option>
+                         <option class="purple" value="5">5 Violet</option>
+                    </select>
+               </div>
+          </div>
+        </div>
+      </div>
+      
+      <br>
+      <div class="row clearfix">
+        <div class="col-sm-12">
+          <div class="col-sm-2 col-xs-12">
+            <div class="form-group text-left">
+              <label for="b6tool_output1">Resistance:</label>
+            </div> 
+          </div>
+          <div class="col-sm-4 col-xs-8">
+            <div id="tool_output_container" class="form-group">
+              <input type="text" id="b6tool_output1" class="form-control" placeholder="Resistance">
+            </div>
+          </div>      
+          <div class="col-sm-4 col-xs-4">
+            <div class="form-group text-left">ohms</div>
+          </div>      
+        </div>
+      </div>
+      <div class="row clearfix">
+        <div class="col-sm-12">
+          <div class="col-sm-2 col-xs-12">
+            <div class="form-group text-left">
+              <label for="b6tool_output2">Tolerance:</label>
+            </div> 
+          </div>
+          <div class="col-sm-4 col-xs-8">
+            <div id="tool_output_container" class="form-group">
+              <input type="text" id="b6tool_output2" class="form-control" placeholder="Tolerance">
+            </div>
+          </div>      
+          <div class="col-sm-4 col-xs-4">
+            <div class="form-group ">&nbsp;</div>
+          </div>      
+        </div>
+      </div>
+	  <div class="row clearfix">
+        <div class="col-sm-12">
+          <div class="col-sm-2 col-xs-12">
+            <div class="form-group text-left">
+              <label for="b6tool_output3">Minimum:</label>
+            </div> 
+          </div>
+          <div class="col-sm-4 col-xs-8">
+            <div id="tool_output_container" class="form-group">
+              <input type="text" id="b6tool_output3" class="form-control" placeholder="Minimum">
+            </div>
+          </div>      
+          <div class="col-sm-4 col-xs-4">
+            <div class="form-group text-left">ohms</div>
+          </div>      
+        </div>
+      </div>
+	  <div class="row clearfix">
+        <div class="col-sm-12">
+          <div class="col-sm-2 col-xs-12">
+            <div class="form-group text-left">
+              <label for="b6tool_output4">Maximum:</label>
+            </div> 
+          </div>
+          <div class="col-sm-4 col-xs-8">
+            <div id="tool_output_container" class="form-group">
+              <input type="text" id="b6tool_output4" class="form-control" placeholder="Maximum">
+            </div>
+          </div>      
+          <div class="col-sm-4 col-xs-4">
+            <div class="form-group text-left">ohms</div>
+          </div>      
+        </div>
+      </div>
+      <div class="row clearfix">
+        <div class="col-sm-12">
+          <div class="col-sm-2 col-xs-12">
+            <div class="form-group text-left">
+              <label for="b6tool_output5">Tempco:</label>
+            </div> 
+          </div>
+          <div class="col-sm-4 col-xs-8">
+            <div id="tool_output_container" class="form-group">
+              <input type="text" id="b6tool_output5" class="form-control" placeholder="Tolerance">
+            </div>
+          </div>      
+          <div class="col-sm-4 col-xs-4">
+            <div class="form-group text-left">ppm/°C</div>
+          </div>      
+        </div>
+      </div>
+    </div>
+    <!-- End Tab 3 -->
+  </div>
+</div>
+
+<!-- Right column end -->
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="../js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../js/bootstrap.min.js"></script>
+
+    <!-- Navigation / Top Menu -->
+    <script>
+    $(function(){
+        $("#navigation").load("../navigacija.html"); 
+    });
+    </script>
+
+<script type="text/javascript">
+var _0x35c4=["\x75\x73\x65\x20\x73\x74\x72\x69\x63\x74","\x73\x75\x62\x73\x74\x72","\x64\x61\x74\x61\x2D\x76\x61\x6C","\x61\x74\x74\x72","\x23\x73\x74\x72\x69\x70","\x70\x75\x73\x68","\x78","\x6D\x61\x74\x63\x68","\x6C\x65\x6E\x67\x74\x68","\x6B","\x4D","\x47","\x76\x61\x6C","\x23\x62","\x74\x6F\x6F\x6C\x5F\x6F\x75\x74\x70\x75\x74\x32","\x23\x73\x74\x72\x69\x70\x36\x36","\x23\x62\x36\x74\x6F\x6F\x6C\x5F\x6F\x75\x74\x70\x75\x74\x35","\x23\x73\x74\x72\x69\x70\x36\x35","\x23\x62\x36\x74\x6F\x6F\x6C\x5F\x6F\x75\x74\x70\x75\x74\x32","\x65\x65","\x74\x6F\x6F\x6C\x5F\x6F\x75\x74\x70\x75\x74\x31","\x6C\x6F\x67","","\x72\x65\x70\x6C\x61\x63\x65","\x74\x65\x73\x74","\x73\x70\x6C\x69\x74","\x2E","\x63\x6F\x6E\x63\x61\x74","\x74\x6F\x50\x72\x65\x63\x69\x73\x69\x6F\x6E","\x74\x6F\x46\x69\x78\x65\x64","\x74\x6F\x6F\x6C\x5F\x6F\x75\x74\x70\x75\x74\x33","\x74\x6F\x6F\x6C\x5F\x6F\x75\x74\x70\x75\x74\x34","\x73\x6C\x69\x63\x65","\x62\x61\x63\x6B\x67\x72\x6F\x75\x6E\x64","\x62\x61\x63\x6B\x67\x72\x6F\x75\x6E\x64\x2D\x63\x6F\x6C\x6F\x72","\x63\x73\x73","\x23","\x68\x74\x6D\x6C","\x72\x65\x6D\x6F\x76\x65\x43\x6C\x61\x73\x73","\x66\x6F\x72\x6D\x2D\x63\x6F\x6E\x74\x72\x6F\x6C\x20\x64\x69\x67\x69\x74\x2D\x70\x69\x63\x6B\x65\x72\x20","\x61\x64\x64\x43\x6C\x61\x73\x73","\x54","\x69\x64","\x63\x6F\x6C\x6F\x75\x72","\x63\x6F\x6D\x70\x75\x74\x65","\x63\x6C\x69\x63\x6B","\x2E\x63\x6F\x6C\x6F\x72\x65\x64\x2D\x62\x6F\x78","\x63\x6C\x61\x73\x73","\x6F\x70\x74\x69\x6F\x6E\x3A\x73\x65\x6C\x65\x63\x74\x65\x64","\x63\x6F\x6C\x6F\x75\x72\x32","\x63\x68\x61\x6E\x67\x65","\x2E\x64\x69\x67\x69\x74\x2D\x70\x69\x63\x6B\x65\x72","\x74\x72\x69\x67\x67\x65\x72","\x23\x62\x34\x64\x31","\x23\x62\x35\x64\x31","\x23\x62\x36\x64\x31"];!function(_0xd6f4x1){_0x35c4[0];var _0xd6f4x2;var _0xd6f4x3;var _0xd6f4x4;var _0xd6f4x5;var _0xd6f4x6={compute:function(_0xd6f4x7){for(var _0xd6f4x8,_0xd6f4x9=_0xd6f4x7[_0x35c4[1]](1,1),_0xd6f4xa=[],_0xd6f4xb=1;_0xd6f4x9> _0xd6f4xb;_0xd6f4xb++){_0xd6f4xa[_0x35c4[5]](_0xd6f4x1(_0x35c4[4]+ _0xd6f4x9+ _0xd6f4xb)[_0x35c4[3]](_0x35c4[2]))};var _0xd6f4xc,_0xd6f4xd=6> _0xd6f4x9?_0xd6f4xa[_0xd6f4x9- 2]:_0xd6f4xa[_0xd6f4x9- 3],_0xd6f4xe=_0x35c4[6]== _0xd6f4xd[_0x35c4[1]](0,1)?1:0,_0xd6f4xf=_0xd6f4xd[_0x35c4[7]](/\d+/),_0xd6f4x10=_0xd6f4xd[_0x35c4[1]](_0xd6f4xd[_0x35c4[8]]- 1);switch(_0xd6f4x10){case _0x35c4[9]:_0xd6f4xc= 1e3* _0xd6f4xf[0];break;case _0x35c4[10]:_0xd6f4xc= 1e6* _0xd6f4xf[0];break;case _0x35c4[11]:_0xd6f4xc= 1e9* _0xd6f4xf[0];break;default:_0xd6f4xc= _0xd6f4xf[0]};_0xd6f4x1(_0x35c4[13]+ _0xd6f4x9+ _0x35c4[14])[_0x35c4[12]](_0xd6f4x1(_0x35c4[4]+ _0xd6f4x9+ _0xd6f4x9)[_0x35c4[3]](_0x35c4[2])),4== _0xd6f4x9?_0xd6f4x8= 1== _0xd6f4xe?(10* _0xd6f4xa[0]+ 1* _0xd6f4xa[1])* _0xd6f4xc:(10* _0xd6f4xa[0]+ 1* _0xd6f4xa[1])/ _0xd6f4xc:5== _0xd6f4x9?_0xd6f4x8= 1== _0xd6f4xe?(100* _0xd6f4xa[0]+ 10* _0xd6f4xa[1]+ 1* _0xd6f4xa[2])* _0xd6f4xc:(100* _0xd6f4xa[0]+ 10* _0xd6f4xa[1]+ 1* _0xd6f4xa[2])/ _0xd6f4xc:6== _0xd6f4x9&& (_0xd6f4x8= 1== _0xd6f4xe?(100* _0xd6f4xa[0]+ 10* _0xd6f4xa[1]+ 1* _0xd6f4xa[2])* _0xd6f4xc:(100* _0xd6f4xa[0]+ 10* _0xd6f4xa[1]+ 1* _0xd6f4xa[2])/ _0xd6f4xc,_0xd6f4x1(_0x35c4[16])[_0x35c4[12]](_0xd6f4x1(_0x35c4[15])[_0x35c4[3]](_0x35c4[2])),_0xd6f4x1(_0x35c4[18])[_0x35c4[12]](_0xd6f4x1(_0x35c4[17])[_0x35c4[3]](_0x35c4[2]))),_0xd6f4x1(_0x35c4[13]+ _0xd6f4x9+ _0x35c4[20])[_0x35c4[12]](_0xd6f4x6[_0x35c4[19]](_0xd6f4x8));console[_0x35c4[21]](_0xd6f4x6[_0x35c4[19]](_0xd6f4x8));_0xd6f4x5= _0xd6f4x6[_0x35c4[19]](_0xd6f4x8)[_0x35c4[23]](/[^a-zA-Z]+/g,_0x35c4[22]);_0xd6f4x4= $(_0x35c4[13]+ _0xd6f4x9+ _0x35c4[14])[_0x35c4[12]]();console[_0x35c4[21]](_0xd6f4x4);_0xd6f4x4= _0xd6f4x4[_0x35c4[23]](/[^0-9]/g,_0x35c4[22]);console[_0x35c4[21]](_0xd6f4x4);var _0xd6f4x11=/^0[0-9].*$/;if(_0xd6f4x11[_0x35c4[24]](_0xd6f4x4)){var _0xd6f4x12=_0xd6f4x4[_0x35c4[25]](_0x35c4[22]);var _0xd6f4x13=_0x35c4[22];if(_0xd6f4x12[2]!= null){_0xd6f4x4= _0xd6f4x13[_0x35c4[27]](_0xd6f4x12[0],_0x35c4[26],_0xd6f4x12[1],_0xd6f4x12[2])}else {_0xd6f4x4= _0xd6f4x13[_0x35c4[27]](_0xd6f4x12[0],_0x35c4[26],_0xd6f4x12[1])};_0xd6f4x4= _0xd6f4x4/ 100;console[_0x35c4[21]](_0xd6f4x4)}else {_0xd6f4x4= _0xd6f4x4/ 100};console[_0x35c4[21]](_0xd6f4x4);_0xd6f4x2= parseFloat(_0xd6f4x6[_0x35c4[19]](_0xd6f4x8))- parseFloat(_0xd6f4x6[_0x35c4[19]](_0xd6f4x8))* _0xd6f4x4;console[_0x35c4[21]](_0xd6f4x2[_0x35c4[28]](6));_0xd6f4x2= _0xd6f4x2[_0x35c4[29]](6);_0xd6f4x3= parseFloat(_0xd6f4x6[_0x35c4[19]](_0xd6f4x8))+ parseFloat(_0xd6f4x6[_0x35c4[19]](_0xd6f4x8))* _0xd6f4x4;console[_0x35c4[21]](_0xd6f4x3[_0x35c4[28]](6));_0xd6f4x3= _0xd6f4x3[_0x35c4[29]](6);_0xd6f4x2= _0xd6f4x2+ _0xd6f4x5;_0xd6f4x3= _0xd6f4x3+ _0xd6f4x5;_0xd6f4x1(_0x35c4[13]+ _0xd6f4x9+ _0x35c4[30])[_0x35c4[12]](_0xd6f4x2);_0xd6f4x1(_0x35c4[13]+ _0xd6f4x9+ _0x35c4[31])[_0x35c4[12]](_0xd6f4x3)},colour:function(_0xd6f4x6){var _0xd6f4x7=_0xd6f4x6[_0x35c4[32]](-1),_0xd6f4x8=_0xd6f4x6[_0x35c4[1]](1,1);_0xd6f4x1(_0x35c4[4]+ _0xd6f4x8+ _0xd6f4x7)[_0x35c4[35]](_0x35c4[33],_0xd6f4x1(_0x35c4[36]+ _0xd6f4x6)[_0x35c4[35]](_0x35c4[34])),_0xd6f4x1(_0x35c4[4]+ _0xd6f4x8+ _0xd6f4x7)[_0x35c4[3]](_0x35c4[2],_0xd6f4x1(_0x35c4[36]+ _0xd6f4x6)[_0x35c4[37]]())},colour2:function(_0xd6f4x6,_0xd6f4x7){var _0xd6f4x8=_0xd6f4x6[_0x35c4[32]](-1),_0xd6f4x9=_0xd6f4x6[_0x35c4[1]](1,1);_0xd6f4x1(_0x35c4[36]+ _0xd6f4x6)[_0x35c4[38]](),_0xd6f4x1(_0x35c4[36]+ _0xd6f4x6)[_0x35c4[40]](_0x35c4[39]+ _0xd6f4x7),_0xd6f4x1(_0x35c4[4]+ _0xd6f4x9+ _0xd6f4x8)[_0x35c4[35]](_0x35c4[33],_0xd6f4x1(_0x35c4[36]+ _0xd6f4x6)[_0x35c4[35]](_0x35c4[34])),_0xd6f4x1(_0x35c4[4]+ _0xd6f4x9+ _0xd6f4x8)[_0x35c4[3]](_0x35c4[2],_0xd6f4x1(_0x35c4[36]+ _0xd6f4x6)[_0x35c4[12]]())},ee:function(_0xd6f4x1){return _0xd6f4x1>= 1e12?_0xd6f4x1= (_0xd6f4x1/ 1e12)[_0x35c4[29]](2)+ _0x35c4[41]:_0xd6f4x1>= 1e9?_0xd6f4x1= (_0xd6f4x1/ 1e9)[_0x35c4[29]](2)+ _0x35c4[11]:_0xd6f4x1>= 1e6?_0xd6f4x1= (_0xd6f4x1/ 1e6)[_0x35c4[29]](2)+ _0x35c4[10]:_0xd6f4x1>= 1e3?_0xd6f4x1= (_0xd6f4x1/ 1e3)[_0x35c4[29]](2)+ _0x35c4[9]:(_0xd6f4x1= parseFloat(_0xd6f4x1),_0xd6f4x1= _0xd6f4x1[_0x35c4[29]](2)),_0xd6f4x1}};_0xd6f4x1(_0x35c4[46])[_0x35c4[45]](function(){_0xd6f4x6[_0x35c4[43]](_0xd6f4x1(this)[_0x35c4[3]](_0x35c4[42])),_0xd6f4x6[_0x35c4[44]](_0xd6f4x1(this)[_0x35c4[3]](_0x35c4[42]))}),_0xd6f4x1(_0x35c4[51])[_0x35c4[50]](function(){var _0xd6f4x7=_0xd6f4x1(_0x35c4[48],this)[_0x35c4[3]](_0x35c4[47]);_0xd6f4x6[_0x35c4[49]](_0xd6f4x1(this)[_0x35c4[3]](_0x35c4[42]),_0xd6f4x7),_0xd6f4x6[_0x35c4[44]](_0xd6f4x1(this)[_0x35c4[3]](_0x35c4[42]))}),_0xd6f4x1(_0x35c4[53])[_0x35c4[52]](_0x35c4[50]),_0xd6f4x1(_0x35c4[54])[_0x35c4[52]](_0x35c4[50]),_0xd6f4x1(_0x35c4[55])[_0x35c4[52]](_0x35c4[50])}(jQuery)
+</script>
+
+<!-- CookieCuttr -->
+<script type="text/javascript" src="../cc/jquery.cookie.js"></script>
+<script type="text/javascript" src="../cc/jquery.cookiecuttr.js"></script>
+<link rel="stylesheet" href="../cc/cookiecuttr.css">
+<script type="text/javascript" src="../cc/google-analytics.js"></script>
+<script type="text/javascript">
+$(document).ready(function () {
+    jQuery.cookieCuttr({
+        cookieDeclineButton: true,
+        cookieAnalyticsMessage: 'Spletišče za sledenje ogledov uporablja piškotke, vendar ne shranjujemo osebnih informacij.',
+        cookieAcceptButtonText: 'Sprejmi',
+        cookieDeclineButtonText: 'Zavrni',
+        cookieWhatAreTheyLink: 'cookies.html',
+        cookieWhatAreLinkText: 'Kaj so piškotki?',
+        cookieNotificationLocationBottom: true
+    });    
+});
+</script>
+
+</body>
+</html>
