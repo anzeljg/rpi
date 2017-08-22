@@ -1,7 +1,11 @@
+# encoding: utf-8
 from gpiozero import Button, Buzzer
 
 gumb = Button(22)
 zvok = Buzzer(4)
 
-gumb.when_pressed = zvok.on()
-gumb.when_released = zvok.off()
+while True:
+    if gumb.is_pressed:
+        zvok.on()
+    if not gumb.is_pressed:
+        zvok.off()

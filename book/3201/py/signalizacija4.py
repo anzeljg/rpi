@@ -1,3 +1,4 @@
+# encoding: utf-8
 from gpiozero import LED
 from time import sleep
 

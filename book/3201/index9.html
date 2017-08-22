@@ -30,6 +30,24 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+    <!-- jQuery -->
+    <script src="../js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../js/bootstrap.min.js"></script>
+
+    <!-- Prism -->
+    <script src="../js/prism.js"></script>
+
+    <!-- Navigation / Top Menu -->
+    <script>
+    $(function(){
+        $("#navigation").load("../navigacija.html"); 
+        $("#fritzing").scrollLeft(420);
+    });
+    </script>
+
 </head>
 
 <body>
@@ -123,6 +141,7 @@
     <li><a href="index7.html">Semafor za pešce in avtomobile</a></li>
     <li><a href="index8.html">Semafor z gumbom za slepe</a></li>
     <li class="active"><a href="index9.html">Cestna razsvetljava</a></li>
+    <li><a href="summary.html">Povzetek</a></li>
     <li><a href="sources.html">Viri</a></li>
   </ul>
 </nav>
@@ -133,14 +152,15 @@
 <!-- Right column start -->
 <h1>Cestna razsvetljava</h1>
 
-<p align="justify">Zadnja naloga pri projektu prometne signalizacije bo izdelava <a href="#razsvetljava" title="Licenca" data-toggle="modal" data-target="#image1">samodejne cestne razsvetljave</a>. Ta deluje tako, da vsebuje svetlobni senzor, ki vključi ali izključi LED diodo (ki predstavlja ulične svetilke oziroma cestno razsvetljavo). To pomeni, da boš na preizkusno ploščico dodal/-a LED diodo fotocelico in kondenzator ter jih sprogramiral/-a tako, da bodo oponašali samodejno prižiganje oziroma ugašanje cestne razsvetljave.</p>
+<p align="justify">Zadnja naloga pri projektu prometne signalizacije bo izdelava <a href="#razsvetljava" title="Licenca" data-toggle="modal" data-target="#image1">samodejne cestne razsvetljave</a>. Ta deluje tako, da vsebuje svetlobni senzor, ki vključi ali izključi LED diodo (ki predstavlja ulične svetilke oziroma cestno razsvetljavo). To pomeni, da boš na preizkusno ploščico dodal/-a LED diodo fotocelico in kondenzator ter jih sprogramiral/-a tako, da bodo oponašali samodejno prižiganje oziroma ugašanje cestne razsvetljave. LED dioda bo svetila kot prava cestna razsvetljava: v temi bo svetila, v mraku pa bo svetila le na pol.</p>
 
-<div id="tabs">	
+<div id="tabs">    
 <ul class="nav nav-tabs">
   <li>&nbsp;&nbsp;&nbsp;</li>
   <li><a href="#pieces" data-toggle="tab">Sestavine</a></li>
   <li><a href="#build" data-toggle="tab">Navodila</a></li>
   <li class="active"><a href="#board" data-toggle="tab">Vezje</a></li>
+  <li><a href="#scheme" data-toggle="tab">Shema</a></li>
   <li><a href="#python" data-toggle="tab">Koda</a></li>
 </ul>
 
@@ -191,21 +211,28 @@
 <pre id="fritzing"><br /><img src="img/signalizacija8_bb.png" border="0"></pre>
 </div>
 
+<!-- Schematics tab -->
+<div class="tab-pane" id="scheme">
+<pre id="fritzing"><br /><img src="img/signalizacija8_sc.png" border="0"></pre>
+</div>
+
 <!-- Python tab -->
 <div class="tab-pane" id="python">
-<pre style="height:450px"><code class="language-python">from gpiozero import LED, LightSensor
+<pre style="height:450px"><code class="language-python"># encoding: utf-8
+from gpiozero import PWMLED, LightSensor
+from time import sleep
 
-led = LED(27)
+led = PWMLED(27)
 ldr = LightSensor(17)
 
 while True:
-	print(ldr.value)
-	# Dokončaj tole!
-	# Ne pozabi skopirat v signalizacija8.py!
-	#if ldr.value >= 123:
-	#	led.on()
-	#else:
-	#	led.off()
+    if ldr.value >= 0.75:
+        led.value = 0   # ne sveti
+    elif ldr.value < 0.75 and ldr.value >= 0.5:
+        led.value = 0.5 # sveti na pol
+    else:
+        led.value = 1   # sveti
+    sleep(1)
 </code></pre>
 <p><a href="py/signalizacija8.py" class="btn btn-primary" target="_blank"><img src="../img/py16src.png"> Izvorna koda</a></p>
 </div>
@@ -219,23 +246,6 @@ while True:
 
     </div>
     <!-- /#wrapper -->
-
-    <!-- jQuery -->
-    <script src="../js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="../js/bootstrap.min.js"></script>
-
-    <!-- Prism -->
-    <script src="../js/prism.js"></script>
-
-    <!-- Navigation / Top Menu -->
-    <script>
-    $(function(){
-        $("#navigation").load("../navigacija.html"); 
-		$("#fritzing").scrollLeft(420);
-    });
-    </script>
 
 <!-- CookieCuttr -->
 <script type="text/javascript" src="../cc/jquery.cookie.js"></script>

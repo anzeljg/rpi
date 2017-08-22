@@ -30,6 +30,24 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+    <!-- jQuery -->
+    <script src="../js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../js/bootstrap.min.js"></script>
+
+    <!-- Prism -->
+    <script src="../js/prism.js"></script>
+
+    <!-- Navigation / Top Menu -->
+    <script>
+    $(function(){
+        $("#navigation").load("../navigacija.html");
+        $("#fritzing").scrollLeft(420);
+    });
+    </script>
+
 </head>
 
 <body>
@@ -98,6 +116,7 @@
     <li><a href="index3.html">Malinini bobni</a></li>
     <li><a href="index4.html">Izdelava ksilofona</a></li>
     <li><a href="index5.html">Skladbice za ksilofon</a></li>
+    <li><a href="summary.html">Povzetek</a></li>
     <li><a href="sources.html">Viri</a></li>
   </ul>
 </nav>
@@ -110,12 +129,13 @@
 
 <p align="justify">Prva naloga pri projektu glasbene skrinjice bo izdelava hišnega zvonca. To pomeni, da boš na preizkusno ploščico dodal/-a gumb in ga sprogramiral/-a tako, da se bo ob pritisku na gumb oglasil hišni zvonec.</p>
 
-<div id="tabs">	
+<div id="tabs">    
 <ul class="nav nav-tabs">
   <li>&nbsp;&nbsp;&nbsp;</li>
   <li><a href="#pieces" data-toggle="tab">Sestavine</a></li>
   <li><a href="#build" data-toggle="tab">Navodila</a></li>
   <li class="active"><a href="#board" data-toggle="tab">Vezje</a></li>
+  <li><a href="#scheme" data-toggle="tab">Shema</a></li>
   <li><a href="#python" data-toggle="tab">Koda</a></li>
 </ul>
 
@@ -138,8 +158,16 @@
   <li>Python 3 (prednameščen na Raspbianu)</li>
   <li>Pythonov modul <code>gpiozero</code> (prednameščen na Raspbianu)</li>
   <li>Pythonov modul <code>pygame</code> (prednameščen na Raspbianu)</li>
-  <li>Zvočna datoteka <a href="wav/doorbell.wav">doorbell.wav</a></li>
+  <li>Zvočna datoteka <a href="media/doorbell.ogg">doorbell.ogg</a></li>
 </ul>
+
+<div class="panel panel-primary">
+  <div class="panel-heading">Opomba</div>
+  <div class="panel-body">
+  <p align="justify">Izkaže se, da ima pythonov modul <code>pygame</code> najmanj težav pri predvajanju zvočnih datotek v formatu Ogg Vorbis. Zato bo najbolje, da zvočne datoteke, ki jih želiš uporabiti v tem ali drugih projektih, najprej pretvoriš v format Ogg Vorbis. To lahko narediš na primer s programom Audacity, ali pa uporabiš kakšno spletno storitev za pretvarjanje med različnimi formati zvočnih datotek.</p>
+  </div>
+</div>
+
 </div>
 </div>
 
@@ -152,7 +180,7 @@
   <li>Poveži gumb z nožico GND in nožico GPIO 22 (glej zavihek Vezje).</li>
   <li>Odpri IDLE in ustvari novo datoteko tako, da klikneš <b>File &gt; New file</b>.</li>
   <li>Shrani novo datoteko tako, da klikneš <b>File &gt; Save</b>. Datoteki daj ime <code>zvonec.py</code>.</li>
-  <li>V isto mapo shrani tudi zvočno datoteko <a href="wav/doorbell.wav">doorbell.wav</a>.</li>
+  <li>V isto mapo shrani tudi zvočno datoteko <a href="media/doorbell.ogg">doorbell.ogg</a>.</li>
   <li>V datoteko <code>zvonec.py</code> vnesi kodo z zavihka Koda.</li>
   <li>Shrani kodo s <b>Ctrl+S</b> in jo nato zaženi s <b>F5</b>.</li>
   <li>Pritisni gumb in zaslišati bi moral/-a zvok hišnega zvonca.</li>
@@ -165,16 +193,24 @@
 <pre id="fritzing"><br /><img src="img/zvonec_bb.png" border="0"></pre>
 </div>
 
+<!-- Schematics tab -->
+<div class="tab-pane" id="scheme">
+<pre id="fritzing"><br /><img src="img/zvonec_sc.png" border="0"></pre>
+</div>
+
 <!-- Python tab -->
 <div class="tab-pane" id="python">
-<pre style="height:450px"><code class="language-python">from gpiozero import Button
+<pre style="height:450px"><code class="language-python"># encoding: utf-8
+from gpiozero import Button
 import pygame
 pygame.init()
 
 gumb = Button(22)
-zvonec = pygame.mixer.Sound('doorbell.wav')
+zvonec = pygame.mixer.Sound('doorbell.ogg')
 
-gumb.when_pressed = zvonec.play()
+while True:
+    if gumb.is_pressed:
+        zvonec.play()
 </code></pre>
 <p><a href="py/zvonec.py" class="btn btn-primary" target="_blank"><img src="../img/py16src.png"> Izvorna koda</a></p>
 </div>
@@ -188,23 +224,6 @@ gumb.when_pressed = zvonec.play()
 
     </div>
     <!-- /#wrapper -->
-
-    <!-- jQuery -->
-    <script src="../js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="../js/bootstrap.min.js"></script>
-
-    <!-- Prism -->
-    <script src="../js/prism.js"></script>
-
-    <!-- Navigation / Top Menu -->
-    <script>
-    $(function(){
-        $("#navigation").load("../navigacija.html");
-		$("#fritzing").scrollLeft(420);
-    });
-    </script>
 
 <!-- CookieCuttr -->
 <script type="text/javascript" src="../cc/jquery.cookie.js"></script>

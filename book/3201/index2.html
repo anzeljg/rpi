@@ -30,6 +30,24 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+    <!-- jQuery -->
+    <script src="../js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../js/bootstrap.min.js"></script>
+
+    <!-- Prism -->
+    <script src="../js/prism.js"></script>
+
+    <!-- Navigation / Top Menu -->
+    <script>
+    $(function(){
+        $("#navigation").load("../navigacija.html"); 
+        $("#fritzing").scrollLeft(420);
+    });
+    </script>
+
 </head>
 
 <body>
@@ -123,6 +141,7 @@
     <li><a href="index7.html">Semafor za pešce in avtomobile</a></li>
     <li><a href="index8.html">Semafor z gumbom za slepe</a></li>
     <li><a href="index9.html">Cestna razsvetljava</a></li>
+    <li><a href="summary.html">Povzetek</a></li>
     <li><a href="sources.html">Viri</a></li>
   </ul>
 </nav>
@@ -135,12 +154,13 @@
 
 <p align="justify">Prva naloga pri projektu prometne signalizacije bo izdelava utripajoče luči. To pomeni, da boš na preizkusno ploščico dodal/-a LED diodo in jo sprogramiral/-a tako, da bo utripala. Utripajoča luč je eden izmed osnovnih elementov prometne signalizacije. Oranžna luč utripa, kadar v križišču ne delujejo semaforji, ali pa kot <a href="#smernik" title="Licenca" data-toggle="modal" data-target="#image1">smernik</a> za nakazovanje smeri vožnje vozil.</p>
 
-<div id="tabs">	
+<div id="tabs">    
 <ul class="nav nav-tabs">
   <li>&nbsp;&nbsp;&nbsp;</li>
   <li><a href="#pieces" data-toggle="tab">Sestavine</a></li>
   <li><a href="#build" data-toggle="tab">Navodila</a></li>
   <li class="active"><a href="#board" data-toggle="tab">Vezje</a></li>
+  <li><a href="#scheme" data-toggle="tab">Shema</a></li>
   <li><a href="#python" data-toggle="tab">Koda</a></li>
 </ul>
 
@@ -188,9 +208,15 @@
 <pre id="fritzing"><br /><img src="img/signalizacija1_bb.png" border="0"></pre>
 </div>
 
+<!-- Schematics tab -->
+<div class="tab-pane" id="scheme">
+<pre id="fritzing"><br /><img src="img/signalizacija1_sc.png" border="0"></pre>
+</div>
+
 <!-- Python tab -->
 <div class="tab-pane" id="python">
-<pre style="height:450px"><code class="language-python">from gpiozero import LED
+<pre style="height:450px"><code class="language-python"># encoding: utf-8
+from gpiozero import LED
 from time import sleep
 
 led = LED(27)
@@ -213,23 +239,6 @@ while True:
 
     </div>
     <!-- /#wrapper -->
-
-    <!-- jQuery -->
-    <script src="../js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="../js/bootstrap.min.js"></script>
-
-    <!-- Prism -->
-    <script src="../js/prism.js"></script>
-
-    <!-- Navigation / Top Menu -->
-    <script>
-    $(function(){
-        $("#navigation").load("../navigacija.html"); 
-		$("#fritzing").scrollLeft(420);
-    });
-    </script>
 
 <!-- CookieCuttr -->
 <script type="text/javascript" src="../cc/jquery.cookie.js"></script>

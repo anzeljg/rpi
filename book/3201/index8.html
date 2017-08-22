@@ -30,6 +30,24 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+    <!-- jQuery -->
+    <script src="../js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../js/bootstrap.min.js"></script>
+
+    <!-- Prism -->
+    <script src="../js/prism.js"></script>
+
+    <!-- Navigation / Top Menu -->
+    <script>
+    $(function(){
+        $("#navigation").load("../navigacija.html"); 
+        $("#fritzing").scrollLeft(505);
+    });
+    </script>
+
 </head>
 
 <body>
@@ -123,6 +141,7 @@
     <li><a href="index7.html">Semafor za pešce in avtomobile</a></li>
     <li class="active"><a href="index8.html">Semafor z gumbom za slepe</a></li>
     <li><a href="index9.html">Cestna razsvetljava</a></li>
+    <li><a href="summary.html">Povzetek</a></li>
     <li><a href="sources.html">Viri</a></li>
   </ul>
 </nav>
@@ -133,14 +152,15 @@
 <!-- Right column start -->
 <h1>Semafor z gumbom za slepe</h1>
 
-<p align="justify">Naslednja naloga pri projektu prometne signalizacije bo nadgradnja prejšnje naloge: izdelava semaforja z gumbom za slepe. Semaforizirano križišče ima semafor za avtomobile, semafor za pešce, <a href="#gumb" title="Licenca" data-toggle="modal" data-target="#image1">gumb s katerim pešec sproži prehod</a> (oziroma zeleno luč za pešce) in brenčač, ki oddaja zvok, ki je v pomoč slepim pešcem. To pomeni, da boš na preizkusno ploščico dodal/-a pet LED diod (dve rdeči, oranžno in dve zeleni), gumb in aktivni brenčač ter jih sprogramiral/-a tako, da bodo oponašale delovanje semaforja z gumbom za slepe.</p>
+<p align="justify">Naslednja naloga pri projektu prometne signalizacije bo nadgradnja prejšnje naloge: izdelava semaforja z gumbom za slepe. Semaforizirano križišče ima semafor za avtomobile, semafor za pešce, <a href="#gumb" title="Licenca" data-toggle="modal" data-target="#image1">gumb s katerim pešec sproži prehod</a> (oziroma zeleno luč za pešce) in brenčač, ki oddaja zvok, ki je v pomoč slepim pešcem. To pomeni, da boš na preizkusno ploščico dodal/-a pet LED diod (dve rdeči, oranžno in dve zeleni), gumb in aktivni piezo brenčač ter jih sprogramiral/-a tako, da bodo oponašale delovanje semaforja z gumbom za slepe.</p>
 
-<div id="tabs">	
+<div id="tabs">    
 <ul class="nav nav-tabs">
   <li>&nbsp;&nbsp;&nbsp;</li>
   <li><a href="#pieces" data-toggle="tab">Sestavine</a></li>
   <li><a href="#build" data-toggle="tab">Navodila</a></li>
   <li class="active"><a href="#board" data-toggle="tab">Vezje</a></li>
+  <li><a href="#scheme" data-toggle="tab">Shema</a></li>
   <li><a href="#python" data-toggle="tab">Koda</a></li>
 </ul>
 
@@ -158,7 +178,7 @@
   <li>5 uporov 330 Ω</li>
   <li>1 pritisni gumb (<i>angl. tactile switch</i>)</li>
   <li>1 upor 10 kΩ</li>
-  <li>1 aktivni brenčač (<i>angl. active buzzer</i>)</li>
+  <li>1 aktivni piezo brenčač (<i>angl. active piezo buzzer</i>)</li>
   <li>vtične žičke moški-moški (<i>angl. jumper wire male-to-male</i>)</li>
 </ul>
 <h4>Programska oprema</h4>
@@ -180,7 +200,7 @@
   <li>Poveži rdeči LED diodi z nožico GND in nožicama GPIO 22, GPIO 26 (glej zavihek Vezje).</li>
   <li>Poveži oranžno LED diodo z nožico GND in nožico GPIO 27 (glej zavihek Vezje).</li>
   <li>Poveži gumb z nožico GND in nožico GPIO 24 (glej zavihek Vezje).</li>
-  <li>Poveži aktivni brenčač z nožico GND in nožico GPIO 5 (glej zavihek Vezje).</li>
+  <li>Poveži aktivni piezo brenčač z nožico GND in nožico GPIO 18 (glej zavihek Vezje).</li>
   <li>Odpri IDLE in ustvari novo datoteko tako, da klikneš <b>File &gt; New file</b>.</li>
   <li>Shrani novo datoteko tako, da klikneš <b>File &gt; Save</b>. Datoteki daj ime <code>signalizacija7.py</code>.</li>
   <li>V datoteko <code>signalizacija7.py</code> vnesi kodo z zavihka Koda.</li>
@@ -195,30 +215,44 @@
 <pre id="fritzing"><br /><img src="img/signalizacija7_bb.png" border="0"></pre>
 </div>
 
+<!-- Schematics tab -->
+<div class="tab-pane" id="scheme">
+<pre id="fritzing"><br /><img src="img/signalizacija7_sc.png" border="0"></pre>
+</div>
+
 <!-- Python tab -->
 <div class="tab-pane" id="python">
-<pre style="height:450px"><code class="language-python">from gpiozero import LED, Button, Buzzer
+<pre style="height:450px"><code class="language-python"># encoding: utf-8
+from gpiozero import LED, Button, Buzzer
 from time import sleep
 
 def prehod():
-    sleep(3)
-	zelena.off()
-	oranzna.on()
-	sleep(1)
-	oranzna.off()
-	rdeca.on()
-	rdeca2.off()
-	zelena2.on()
-	zvok.on()
-	sleep(3)
-	zvok.off()
-	zelena2.off()
-	rdeca2.on()
-	oranzna.on()
-	sleep(1)
-	rdeca.off()
-	oranzna.off()
-	zelena.on()
+    sleep(2)
+    # oranžna
+    zelena.off()
+    oranzna.on()
+    sleep(1)
+    # rdeča
+    oranzna.off()
+    rdeca.on()
+    sleep(0.5)
+    # zelena za pešce
+    rdeca2.off()
+    zelena2.on()
+    zvok.on()
+    sleep(2)
+    # rdeča za pešce
+    zvok.off()
+    zelena2.off()
+    sleep(0.5)
+    # rdeča in oranžna
+    rdeca2.on()
+    oranzna.on()
+    sleep(1)
+    # zelena
+    rdeca.off()
+    oranzna.off()
+    zelena.on()
 
 # semafor za avtomobile
 zelena = LED(17)
@@ -233,7 +267,7 @@ rdeca2 = LED(26)
 gumb = Button(24)
 
 # piezo aktivni brenčač
-zvok = Buzzer(5)
+zvok = Buzzer(18)
 
 # zelena za avtomobile, rdeča za pešce
 rdeca.off()
@@ -242,8 +276,10 @@ zelena.on()
 rdeca2.on()
 zelena2.off()
 
-# ko pešec pritisne gumb
-gumb.when_pressed = prehod()
+# vsakokrat ko pešec pritisne gumb
+while True:
+    if gumb.is_pressed:
+        prehod()
 </code></pre>
 <p><a href="py/signalizacija7.py" class="btn btn-primary" target="_blank"><img src="../img/py16src.png"> Izvorna koda</a></p>
 </div>
@@ -257,23 +293,6 @@ gumb.when_pressed = prehod()
 
     </div>
     <!-- /#wrapper -->
-
-    <!-- jQuery -->
-    <script src="../js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="../js/bootstrap.min.js"></script>
-
-    <!-- Prism -->
-    <script src="../js/prism.js"></script>
-
-    <!-- Navigation / Top Menu -->
-    <script>
-    $(function(){
-        $("#navigation").load("../navigacija.html"); 
-		$("#fritzing").scrollLeft(505);
-    });
-    </script>
 
 <!-- CookieCuttr -->
 <script type="text/javascript" src="../cc/jquery.cookie.js"></script>

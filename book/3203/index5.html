@@ -10,7 +10,7 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="../favicon.ico" />
 
-    <title>Samodejni telegraf</title>
+    <title>SOS oddajnik</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
@@ -30,6 +30,24 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+    <!-- jQuery -->
+    <script src="../js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../js/bootstrap.min.js"></script>
+
+    <!-- Prism -->
+    <script src="../js/prism.js"></script>
+
+    <!-- Navigation / Top Menu -->
+    <script>
+    $(function(){
+        $("#navigation").load("../navigacija.html"); 
+        $("#fritzing").scrollLeft(420);
+    });
+    </script>
+
 </head>
 
 <body>
@@ -84,6 +102,30 @@
             </div>
         </div>
 
+        <!-- Modal (popup) window: SOS description -->
+        <div id="distress" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Signal SOS</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p align="justify"><span style="text-decoration:overline">SOS</span> je mednarodni Morsejev znak za stisko. Sestavljen je treh kratkih, treh dolgih in treh kratkih znakov, ki v telegrafiji pomenijo različno dolge piske. To je enako kot črke S, O in S s to razliko, da črta zgoraj nakazuje telegrafski zapis, da se odpošlje vse skupaj kot en znak. To pomeni brez premorov, ki se navadno naredijo med črkami.</p>
+                        <p align="justify">Znak SOS je postal svetovni standard v okviru druge Mednarodne radiotelegrafske konvencije, ki je bila podpisana 3. novembra 1906 in začela veljati 1. julija 1908. SOS je ostal znak za stisko do leta 1999, ko ga je nadomestil globalni pomorski sistem za varnost in stisko.</p>
+                        <p align="justify">Znak se najpogosteje pošlje preko radijske postaje ali s pomočjo svetlobnih signalov. Možno jih je tudi ustvariti z udarjanjem v trde predmete, ki lahko ustvarijo zvok.</p>
+                        <p align="justify">Čeprav velja splošno prepričanje, da je to kratica za »Save Our Souls«, »Save Our Ship« ali »Send Our Savior« (<i>slov. Rešite naše duše, Rešite našo ladjo, Pošljite rešitelja</i>) so to le izpeljanke iz kratice. V resnici je to dogovorjen signal in to tak, da je njegovo oddajanje in prepoznavanje razumljivo tudi amaterjem na tem področju, celo pri zunanjih motnjah. Tudi dejstvo, da ga oddajamo kot eno črko oziroma znak namesto treh kaže na to, da to ni kratica.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Zapri</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
         <!-- Page Content -->
         <div id="page-content-wrapper">
             <div class="container-fluid">
@@ -97,7 +139,9 @@
     <li><a href="index2.html">Kaj je Morsejeva koda?</a></li>
     <li><a href="index3.html">Malinin telegraf</a></li>
     <li><a href="index4.html">Malinin aldis telegraf</a></li>
-    <li class="active"><a href="index5.html">Samodejni telegraf</a></li>
+    <li class="active"><a href="index5.html">SOS oddajnik</a></li>
+    <li><a href="index6.html">Samodejni telegraf</a></li>
+    <li><a href="summary.html">Povzetek</a></li>
     <li><a href="sources.html">Viri</a></li>
   </ul>
 </nav>
@@ -106,17 +150,24 @@
                     <div class="col-md-8">
                         <br />
 <!-- Right column start -->
-<h1>Samodejni telegraf</h1>
+<h1>SOS oddajnik</h1>
 
-<p align="justify">Zadnja naloga pri projektu Morsejeve kode bo izdelava Malininega samodejnega telegrafa. Na preizkusno ploščico boš dodal/-a brenčač in LED diodo ter sprogramiral/-a program, ki bo samodejno začel oddajati sporočilo, ki ga boš vnesel/-a.</p>
+<p align="justify">Naslednja naloga pri projektu Morsejeve kode bo izdelava SOS oddajnika. Na preizkusno ploščico boš dodal/-a brenčač in LED diodo ter sprogramiral/-a program, ki bo samodejno začel oddajati <a href="#sos" title="SOS" data-toggle="modal" data-target="#distress">signal SOS</a> oziroma klic na pomoč.</p>
 
-<div id="tabs">	
+<div id="tabs">    
 <ul class="nav nav-tabs">
   <li>&nbsp;&nbsp;&nbsp;</li>
   <li><a href="#pieces" data-toggle="tab">Sestavine</a></li>
   <li><a href="#build" data-toggle="tab">Navodila</a></li>
   <li class="active"><a href="#board" data-toggle="tab">Vezje</a></li>
+  <li><a href="#scheme" data-toggle="tab">Shema</a></li>
   <li><a href="#python" data-toggle="tab">Koda</a></li>
+  <li class="pull-right">
+    <audio controls>
+      <source src="media/SOS_morse_code.ogg" type="audio/ogg">
+      Brskalnik ne podpira zvočnega predvajalnika.
+    </audio>
+  </li>
 </ul>
 
 <div class="tab-content clearfix">
@@ -164,60 +215,40 @@
 <pre id="fritzing"><br /><img src="img/telegraf3_bb.png" border="0"></pre>
 </div>
 
+<!-- Schematics tab -->
+<div class="tab-pane" id="scheme">
+<pre id="fritzing"><br /><img src="img/telegraf3_sc.png" border="0"></pre>
+</div>
+
 <!-- Python tab -->
 <div class="tab-pane" id="python">
-<pre style="height:450px"><code class="language-python">from gpiozero import Buzzer, LED
+<pre style="height:450px"><code class="language-python"># encoding: utf-8
+from gpiozero import Buzzer, LED
 from time import sleep
 
 def prizgi():
-  zvok.on()
-  aldis.on()
+    aldis.on()
+    zvok.on()
 
 def ugasni():
-  zvok.off()
-  aldis.off()
-
-def oddaj(zaporedje):
-  for simbol in zaporedje:
-    prizgi()
-    if simbol == '.':
-      sleep(enota)
-    if simbol == '-':
-      sleep(3 * enota)
-    ugasni()
-    sleep(enota)
+    aldis.off()
+    zvok.off()
 
 zvok = Buzzer(4)
 aldis = LED(27)
 
-enota = 1 # privzeta enota je 1 sekunda
+enota = 0.1 # privzeta enota je desetinka sekunde
 
-abeceda = {
-  'A': '.-',     'B': '-...',   'C': '-.-.',
-  'D': '-..',    'E': '.',      'F': '..-.',
-  'G': '--.',    'H': '....',   'I': '..',
-  'J': '.---',   'K': '-.-',    'L': '.-..',
-  'M': '--',     'N': '-.',     'O': '---',
-  'P': '.--.',   'Q': '--.-',   'R': '.-.',
-  'S': '...',    'T': '-',      'U': '..-',
-  'V': '...-',   'W': '.--',    'X': '-..-',
-  'Y': '-.--',   'Z': '--..',
-  '0': '-----',  '1': '.----',  '2': '..---',
-  '3': '...--',  '4': '....-',  '5': '.....',
-  '6': '-....',  '7': '--...',  '8': '---..',
-  '9': '----.'
-}
-
-sporocilo = input('Vnesi sporočilo:').upper()
-print(sporocilo)
-
-for znak in sporocilo:
-  if znak in 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 ':
-    if znak == ' ':
-      sleep(7 * enota)
-    else:
-      oddaj(abeceda[znak])
-      sleep(2 * enota)
+while True:
+    for znak in '...---...':
+        prizgi()
+        if znak == '.':
+            sleep(enota)
+        if znak == '-':
+            sleep(3 * enota)
+        ugasni()
+        sleep(enota)
+    sleep(2 * enota)
 </code></pre>
 <p><a href="py/telegraf3.py" class="btn btn-primary" target="_blank"><img src="../img/py16src.png"> Izvorna koda</a></p>
 </div>
@@ -231,23 +262,6 @@ for znak in sporocilo:
 
     </div>
     <!-- /#wrapper -->
-
-    <!-- jQuery -->
-    <script src="../js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="../js/bootstrap.min.js"></script>
-
-    <!-- Prism -->
-    <script src="../js/prism.js"></script>
-
-    <!-- Navigation / Top Menu -->
-    <script>
-    $(function(){
-        $("#navigation").load("../navigacija.html"); 
-		$("#fritzing").scrollLeft(420);
-    });
-    </script>
 
 <!-- CookieCuttr -->
 <script type="text/javascript" src="../cc/jquery.cookie.js"></script>

@@ -1,8 +1,11 @@
+# encoding: utf-8
 from gpiozero import Button
 import pygame
 pygame.init()
 
 gumb = Button(22)
-zvonec = pygame.mixer.Sound('doorbell.wav')
+zvonec = pygame.mixer.Sound('doorbell.ogg')
 
-gumb.when_pressed = zvonec.play()
+while True:
+    if gumb.is_pressed:
+        zvonec.play()

@@ -30,6 +30,24 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+    <!-- jQuery -->
+    <script src="../js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../js/bootstrap.min.js"></script>
+
+    <!-- Prism -->
+    <script src="../js/prism.js"></script>
+
+    <!-- Navigation / Top Menu -->
+    <script>
+    $(function(){
+        $("#navigation").load("../navigacija.html");
+        $("#fritzing").scrollLeft(420);
+    });
+    </script>
+
 </head>
 
 <body>
@@ -98,6 +116,7 @@
     <li class="active"><a href="index3.html">Malinini bobni</a></li>
     <li><a href="index4.html">Izdelava ksilofona</a></li>
     <li><a href="index5.html">Skladbice za ksilofon</a></li>
+    <li><a href="summary.html">Povzetek</a></li>
     <li><a href="sources.html">Viri</a></li>
   </ul>
 </nav>
@@ -110,12 +129,13 @@
 
 <p align="justify">Naslednja naloga pri projektu glasbene skrinjice bo izdelava Malinine različice seta bobnov. To pomeni, da boš na preizkusno ploščico dodal/-a štiri gumbe in jih sprogramiral/-a tako, da se bo ob pritisku na posamezen gumb predvajal zvoke bobnov ali činel.</p>
 
-<div id="tabs">	
+<div id="tabs">    
 <ul class="nav nav-tabs">
   <li>&nbsp;&nbsp;&nbsp;</li>
   <li><a href="#pieces" data-toggle="tab">Sestavine</a></li>
   <li><a href="#build" data-toggle="tab">Navodila</a></li>
   <li class="active"><a href="#board" data-toggle="tab">Vezje</a></li>
+  <li><a href="#scheme" data-toggle="tab">Shema</a></li>
   <li><a href="#python" data-toggle="tab">Koda</a></li>
 </ul>
 
@@ -138,8 +158,16 @@
   <li>Python 3 (prednameščen na Raspbianu)</li>
   <li>Pythonov modul <code>gpiozero</code> (prednameščen na Raspbianu)</li>
   <li>Pythonov modul <code>pygame</code> (prednameščen na Raspbianu)</li>
-  <li>Zvočne datoteke <a href="wav/cowbell.wav">cowbell.wav</a>, <a href="wav/crash.wav">crash.wav</a>, <a href="wav/snare.wav">snare.wav</a> in <a href="wav/tom.wav">tom.wav</a></li>
+  <li>Zvočne datoteke <a href="media/cowbell.ogg">cowbell.ogg</a>, <a href="media/crash.ogg">crash.ogg</a>, <a href="media/snare.ogg">snare.ogg</a> in <a href="media/tom.ogg">tom.ogg</a></li>
 </ul>
+
+<div class="panel panel-primary">
+  <div class="panel-heading">Opomba</div>
+  <div class="panel-body">
+  <p align="justify">Izkaže se, da ima pythonov modul <code>pygame</code> najmanj težav pri predvajanju zvočnih datotek v formatu Ogg Vorbis. Zato bo najbolje, da zvočne datoteke, ki jih želiš uporabiti v tem ali drugih projektih, najprej pretvoriš v format Ogg Vorbis. To lahko narediš na primer s programom Audacity, ali pa uporabiš kakšno spletno storitev za pretvarjanje med različnimi formati zvočnih datotek.</p>
+  </div>
+</div>
+
 </div>
 </div>
 
@@ -152,7 +180,7 @@
   <li>Poveži vse gumbe z nožico GND in nožicami GPIO 4, GPIO 17, GPIO 22 in GPIO 27 (glej zavihek Vezje).</li>
   <li>Odpri IDLE in ustvari novo datoteko tako, da klikneš <b>File &gt; New file</b>.</li>
   <li>Shrani novo datoteko tako, da klikneš <b>File &gt; Save</b>. Datoteki daj ime <code>bobni.py</code>.</li>
-  <li>V isto mapo shrani tudi zvočne datoteke <a href="wav/cowbell.wav">cowbell.wav</a>, <a href="wav/crash.wav">crash.wav</a>, <a href="wav/snare.wav">snare.wav</a> in <a href="wav/tom.wav">tom.wav</a>.</li>
+  <li>V isto mapo shrani tudi zvočne datoteke <a href="media/cowbell.ogg">cowbell.ogg</a>, <a href="media/crash.ogg">crash.ogg</a>, <a href="media/snare.ogg">snare.ogg</a> in <a href="media/tom.ogg">tom.ogg</a>.</li>
   <li>V datoteko <code>bobni.py</code> vnesi kodo z zavihka Koda.</li>
   <li>Shrani kodo s <b>Ctrl+S</b> in jo nato zaženi s <b>F5</b>.</li>
   <li>Izmenično pritiskaj gumbe in zaslišati bi moral/-a zvoke bobnov in/ali činel.</li>
@@ -165,9 +193,15 @@
 <pre id="fritzing"><br /><img src="img/bobni_bb.png" border="0"></pre>
 </div>
 
+<!-- Schematics tab -->
+<div class="tab-pane" id="scheme">
+<pre id="fritzing"><br /><img src="img/bobni_sc.png" border="0"></pre>
+</div>
+
 <!-- Python tab -->
 <div class="tab-pane" id="python">
-<pre style="height:450px"><code class="language-python">from gpiozero import Button
+<pre style="height:450px"><code class="language-python"># encoding: utf-8
+from gpiozero import Button
 import pygame
 pygame.init()
 
@@ -176,15 +210,20 @@ gumb2 = Button(17)
 gumb3 = Button(27)
 gumb4 = Button(22)
 
-zvok1 = pygame.mixer.Sound('crash.wav')
-zvok2 = pygame.mixer.Sound('snare.wav')
-zvok3 = pygame.mixer.Sound('tom.wav')
-zvok4 = pygame.mixer.Sound('cowbell.wav')
+zvok1 = pygame.mixer.Sound('crash.ogg')
+zvok2 = pygame.mixer.Sound('snare.ogg')
+zvok3 = pygame.mixer.Sound('tom.ogg')
+zvok4 = pygame.mixer.Sound('cowbell.ogg')
 
-gumb1.when_pressed = zvok1.play()
-gumb2.when_pressed = zvok2.play()
-gumb3.when_pressed = zvok3.play()
-gumb4.when_pressed = zvok4.play()
+while True:
+    if gumb1.is_pressed:
+        zvok1.play()
+    if gumb2.is_pressed:
+        zvok2.play()
+    if gumb3.is_pressed:
+        zvok3.play()
+    if gumb4.is_pressed:
+        zvok4.play()
 </code></pre>
 <p><a href="py/bobni.py" class="btn btn-primary" target="_blank"><img src="../img/py16src.png"> Izvorna koda</a></p>
 </div>
@@ -198,23 +237,6 @@ gumb4.when_pressed = zvok4.play()
 
     </div>
     <!-- /#wrapper -->
-
-    <!-- jQuery -->
-    <script src="../js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="../js/bootstrap.min.js"></script>
-
-    <!-- Prism -->
-    <script src="../js/prism.js"></script>
-
-    <!-- Navigation / Top Menu -->
-    <script>
-    $(function(){
-        $("#navigation").load("../navigacija.html");
-		$("#fritzing").scrollLeft(420);
-    });
-    </script>
 
 <!-- CookieCuttr -->
 <script type="text/javascript" src="../cc/jquery.cookie.js"></script>

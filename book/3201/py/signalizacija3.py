@@ -1,3 +1,4 @@
+# encoding: utf-8
 from gpiozero import LED
 from time import sleep
 
@@ -29,4 +30,4 @@ while True:
     sleep(1)
     led4.off()
     led5.on()
-	sleep(1)
+    sleep(1)

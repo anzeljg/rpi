@@ -25,29 +25,12 @@
 }
 /* Lobster font import end */
 
-/* highlight theme: Bright */
-/*
-pre.hl   {color:#330066; background-color:#f8f8f8; height:450px;}
-.hl.num {color:#32ba06;}
-.hl.esc {color:#a61761;}
-.hl.str {color:#1861a7;}
-.hl.pps {color:#663300;}
-.hl.slc {color:#006633;}
-.hl.com {color:#006633;}
-.hl.ppc {color:#5374b0;}
-.hl.opt {color:#555555;}
-.hl.ipl {color:#a61761;}
-.hl.lin {color:#9a9a9a;}
-.hl.kwa {color:#ff3030;}
-.hl.kwb {color:#f48c23;}
-.hl.kwc {color:#0000ff;}
-.hl.kwd {color:#d11ced;}
-*/
 
 #page-content-wrapper {
   padding-top: 70px;
   padding-left: 50px;
   padding-right: 150px;
+  padding-bottom: 50px;
 }
 
 .navbar {

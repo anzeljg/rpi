@@ -30,6 +30,24 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+    <!-- jQuery -->
+    <script src="../js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../js/bootstrap.min.js"></script>
+
+    <!-- Prism -->
+    <script src="../js/prism.js"></script>
+
+    <!-- Navigation / Top Menu -->
+    <script>
+    $(function(){
+        $("#navigation").load("../navigacija.html");
+        $("#fritzing").scrollLeft(420);
+    });
+    </script>
+
 </head>
 
 <body>
@@ -96,7 +114,7 @@
                     </div>
                     <div class="modal-body">
                         <p align="justify">Ksílofón (iz grških besed ξύλον—xylon, "les" in φωνή—phōnē, "zvok, glas", pomeni "leseni zvok") je glasbilo, ki proizvaja zvok z udarjanjem po lesenih ploščicah različnih dolžin. Spada med tolkala. V uporabi je v simfoničnih orkestrih, kot solistični inštrument in pa v Orffovih skupinah.</p>
-						<p align="justify">Ksilofon je  splošen izraz, ki se poleg ksilofona uporablja tudi za druga glasbila, kot na primer marimba, metalofon in druga. Metalofon je glasbilo, podobno ksilofonu, le da ima kovinske ploščice namesto lesenih.</p>
+                        <p align="justify">Ksilofon je  splošen izraz, ki se poleg ksilofona uporablja tudi za druga glasbila, kot na primer marimba, metalofon in druga. Metalofon je glasbilo, podobno ksilofonu, le da ima kovinske ploščice namesto lesenih.</p>
                         <p><img src="img/instrument-2010525_1280.jpg" class="img-responsive"></p>
                     </div>
                     <div class="modal-footer">
@@ -121,6 +139,7 @@
     <li><a href="index3.html">Malinini bobni</a></li>
     <li class="active"><a href="index4.html">Izdelava ksilofona</a></li>
     <li><a href="index5.html">Skladbice za ksilofon</a></li>
+    <li><a href="summary.html">Povzetek</a></li>
     <li><a href="sources.html">Viri</a></li>
   </ul>
 </nav>
@@ -133,12 +152,13 @@
 
 <p align="justify">Zadnja naloga pri projektu glasbene skrinjice bo izdelava Malinine različice <a href="#ksilofon" title="Ksilofon" data-toggle="modal" data-target="#xylophone">otroškega ksilofona</a>. To pomeni, da boš na preizkusno ploščico dodal/-a osem gumbov in jih sprogramiral/-a tako, da se bo ob pritisku na posamezen gumb predvajal zvoke posameznih tonov, ki jih lahko zaigraš na otroškem ksilofonu.</p>
 
-<div id="tabs">	
+<div id="tabs">    
 <ul class="nav nav-tabs">
   <li>&nbsp;&nbsp;&nbsp;</li>
   <li><a href="#pieces" data-toggle="tab">Sestavine</a></li>
   <li><a href="#build" data-toggle="tab">Navodila</a></li>
   <li class="active"><a href="#board" data-toggle="tab">Vezje</a></li>
+  <li><a href="#scheme" data-toggle="tab">Shema</a></li>
   <li><a href="#python" data-toggle="tab">Koda</a></li>
 </ul>
 
@@ -157,18 +177,21 @@
   <li>vtične žičke moški-moški (<i>angl. jumper wire male-to-male</i>)</li>
 </ul>
 
-<div class="panel panel-primary">
-  <div class="panel-heading">Opomba</div>
-  <div class="panel-body">Če je mogoče, uporabi žičke istih barv, kot so na sliki vezja (glej zavihek Vezje), saj so z istimi barvami označene tudi note v skladbicah na naslednji strani.</div>
-</div>
-
 <h4>Programska oprema</h4>
 <ul>
   <li>Python 3 (prednameščen na Raspbianu)</li>
   <li>Pythonov modul <code>gpiozero</code> (prednameščen na Raspbianu)</li>
   <li>Pythonov modul <code>pygame</code> (prednameščen na Raspbianu)</li>
-  <li>Zvočne datoteke <a href="wav/c1.wav">c1.wav</a>, <a href="wav/d1.wav">d1.wav</a>, <a href="wav/e1.wav">e1.wav</a>, <a href="wav/f1.wav">f1.wav</a>, <a href="wav/g1.wav">g1.wav</a>, <a href="wav/a1.wav">a1.wav</a>, <a href="wav/b1.wav">b1.wav</a> in <a href="wav/c2.wav">c2.wav</a></li>
+  <li>Zvočne datoteke <a href="media/c1.ogg">c1.ogg</a>, <a href="media/d1.ogg">d1.ogg</a>, <a href="media/e1.ogg">e1.ogg</a>, <a href="media/f1.ogg">f1.ogg</a>, <a href="media/g1.ogg">g1.ogg</a>, <a href="media/a1.ogg">a1.ogg</a>, <a href="media/b1.ogg">b1.ogg</a> in <a href="media/c2.ogg">c2.ogg</a></li>
 </ul>
+
+<div class="panel panel-primary">
+  <div class="panel-heading">Opomba</div>
+  <div class="panel-body">
+  <p align="justify">Izkaže se, da ima pythonov modul <code>pygame</code> najmanj težav pri predvajanju zvočnih datotek v formatu Ogg Vorbis. Zato bo najbolje, da zvočne datoteke, ki jih želiš uporabiti v tem ali drugih projektih, najprej pretvoriš v format Ogg Vorbis. To lahko narediš na primer s programom Audacity, ali pa uporabiš kakšno spletno storitev za pretvarjanje med različnimi formati zvočnih datotek.</p>
+  </div>
+</div>
+
 </div>
 </div>
 
@@ -181,7 +204,7 @@
   <li>Poveži vse gumbe z nožico GND in nožicami GPIO 4, GPIO 17, GPIO 22 in GPIO 27<br />ter GPIO 5, GPIO 6, GPIO 13 in GPIO 19 (glej zavihek Vezje).</li>
   <li>Odpri IDLE in ustvari novo datoteko tako, da klikneš <b>File &gt; New file</b>.</li>
   <li>Shrani novo datoteko tako, da klikneš <b>File &gt; Save</b>. Datoteki daj ime <code>ksilofon.py</code>.</li>
-  <li>V isto mapo shrani tudi zvočne datoteke <a href="wav/c1.wav">c1.wav</a>, <a href="wav/d1.wav">d1.wav</a>, <a href="wav/e1.wav">e1.wav</a>, <a href="wav/f1.wav">f1.wav</a>, <a href="wav/g1.wav">g1.wav</a>, <a href="wav/a1.wav">a1.wav</a>, <a href="wav/b1.wav">b1.wav</a> in <a href="wav/c2.wav">c2.wav</a>.</li>
+  <li>V isto mapo shrani tudi zvočne datoteke <a href="media/c1.ogg">c1.ogg</a>, <a href="media/d1.ogg">d1.ogg</a>, <a href="media/e1.ogg">e1.ogg</a>, <a href="media/f1.ogg">f1.ogg</a>, <a href="media/g1.ogg">g1.ogg</a>, <a href="media/a1.ogg">a1.ogg</a>, <a href="media/b1.ogg">b1.ogg</a> in <a href="media/c2.ogg">c2.ogg</a>.</li>
   <li>V datoteko <code>ksilofon.py</code> vnesi kodo z zavihka Koda.</li>
   <li>Shrani kodo s <b>Ctrl+S</b> in jo nato zaženi s <b>F5</b>.</li>
   <li>Izmenično pritiskaj gumbe in zaslišati bi moral/-a zvoke posameznih tonov otroškega ksilofona.</li>
@@ -190,7 +213,9 @@
 
 <div class="panel panel-primary">
   <div class="panel-heading">Opomba</div>
-  <div class="panel-body">Pri starejših modelih Maline (26 nožic) zamenjaj nožice GPIO 5, GPIO 6, GPIO 13 in GPIO 19<br />z nožicami GPIO 18, GPIO 23, GPIO 24 in GPIO 25.</div>
+  <div class="panel-body">
+  <p align="justify">Če je mogoče, uporabi žičke istih barv, kot so na sliki vezja (glej zavihek Vezje), saj so z istimi barvami označene tudi note v skladbicah na naslednji strani.</p>
+  </div>
 </div>
 
 </div>
@@ -201,9 +226,15 @@
 <pre id="fritzing"><br /><img src="img/ksilofon_bb.png" border="0"></pre>
 </div>
 
+<!-- Schematics tab -->
+<div class="tab-pane" id="scheme">
+<pre id="fritzing"><br /><img src="img/ksilofon_sc.png" border="0"></pre>
+</div>
+
 <!-- Python tab -->
 <div class="tab-pane" id="python">
-<pre style="height:450px"><code class="language-python">from gpiozero import Button
+<pre style="height:450px"><code class="language-python"># encoding: utf-8
+from gpiozero import Button
 import pygame
 pygame.init()
 
@@ -216,23 +247,32 @@ gumb_a1 = Button(27)
 gumb_h1 = Button(17)
 gumb_c2 = Button(4)
 
-ton_c1 = pygame.mixer.Sound('c1.wav')
-ton_d1 = pygame.mixer.Sound('d1.wav')
-ton_e1 = pygame.mixer.Sound('e1.wav')
-ton_f1 = pygame.mixer.Sound('f1.wav')
-ton_g1 = pygame.mixer.Sound('g1.wav')
-ton_a1 = pygame.mixer.Sound('a1.wav')
-ton_h1 = pygame.mixer.Sound('b1.wav')
-ton_c2 = pygame.mixer.Sound('c2.wav')
+ton_c1 = pygame.mixer.Sound('c1.ogg')
+ton_d1 = pygame.mixer.Sound('d1.ogg')
+ton_e1 = pygame.mixer.Sound('e1.ogg')
+ton_f1 = pygame.mixer.Sound('f1.ogg')
+ton_g1 = pygame.mixer.Sound('g1.ogg')
+ton_a1 = pygame.mixer.Sound('a1.ogg')
+ton_h1 = pygame.mixer.Sound('b1.ogg')
+ton_c2 = pygame.mixer.Sound('c2.ogg')
 
-gumb_c1.when_pressed = ton_c1.play()
-gumb_d1.when_pressed = ton_d1.play()
-gumb_e1.when_pressed = ton_e1.play()
-gumb_f1.when_pressed = ton_f1.play()
-gumb_g1.when_pressed = ton_g1.play()
-gumb_a1.when_pressed = ton_a1.play()
-gumb_h1.when_pressed = ton_h1.play()
-gumb_c2.when_pressed = ton_c1.play()
+while True:
+    if gumb_c1.is_pressed:
+        ton_c1.play()
+    if gumb_d1.is_pressed:
+        ton_d1.play()
+    if gumb_e1.is_pressed:
+        ton_e1.play()
+    if gumb_f1.is_pressed:
+        ton_f1.play()
+    if gumb_g1.is_pressed:
+        ton_g1.play()
+    if gumb_a1.is_pressed:
+        ton_a1.play()
+    if gumb_h1.is_pressed:
+        ton_h1.play()
+    if gumb_c2.is_pressed:
+        ton_c2.play()
 </code></pre>
 <p><a href="py/ksilofon.py" class="btn btn-primary" target="_blank"><img src="../img/py16src.png"> Izvorna koda</a></p>
 </div>
@@ -246,23 +286,6 @@ gumb_c2.when_pressed = ton_c1.play()
 
     </div>
     <!-- /#wrapper -->
-
-    <!-- jQuery -->
-    <script src="../js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="../js/bootstrap.min.js"></script>
-
-    <!-- Prism -->
-    <script src="../js/prism.js"></script>
-
-    <!-- Navigation / Top Menu -->
-    <script>
-    $(function(){
-        $("#navigation").load("../navigacija.html");
-		$("#fritzing").scrollLeft(420);
-    });
-    </script>
 
 <!-- CookieCuttr -->
 <script type="text/javascript" src="../cc/jquery.cookie.js"></script>

@@ -27,6 +27,20 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+    <!-- jQuery -->
+    <script src="../js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../js/bootstrap.min.js"></script>
+
+    <!-- Navigation / Top Menu -->
+    <script>
+    $(function(){
+        $("#navigation").load("../navigacija.html"); 
+    });
+    </script>
+
 </head>
 
 <body>
@@ -95,6 +109,7 @@
     <li><a href="index3.html">Malinini bobni</a></li>
     <li><a href="index4.html">Izdelava ksilofona</a></li>
     <li><a href="index5.html">Skladbice za ksilofon</a></li>
+    <li><a href="summary.html">Povzetek</a></li>
     <li><a href="sources.html">Viri</a></li>
   </ul>
 </nav>
@@ -117,42 +132,42 @@
 <table class="table">
   <tr>
     <th>Časovni vzorec</th>
-	<td>1</td>
-	<td>2</td>
-	<td>3</td>
-	<td>4</td>
-	<td>5</td>
-	<td>6</td>
-	<td>7</td>
-	<td>8</td>
-	<td>9</td>
-	<td>10</td>
+    <td>1</td>
+    <td>2</td>
+    <td>3</td>
+    <td>4</td>
+    <td>5</td>
+    <td>6</td>
+    <td>7</td>
+    <td>8</td>
+    <td>9</td>
+    <td>10</td>
   </tr>
   <tr>
     <th>Desetiška vrednost</th>
-	<td>8</td>
-	<td>3</td>
-	<td>7</td>
-	<td>6</td>
-	<td>9</td>
-	<td>7</td>
-	<td>2</td>
-	<td>6</td>
-	<td>6</td>
-	<td>6</td>
+    <td>8</td>
+    <td>3</td>
+    <td>7</td>
+    <td>6</td>
+    <td>9</td>
+    <td>7</td>
+    <td>2</td>
+    <td>6</td>
+    <td>6</td>
+    <td>6</td>
   </tr>
   <tr>
     <th>Dvojiška vrednost</th>
-	<td>1000</td>
-	<td>0011</td>
-	<td>0111</td>
-	<td>0110</td>
-	<td>1001</td>
-	<td>0111</td>
-	<td>0010</td>
-	<td>0110</td>
-	<td>0110</td>
-	<td>0110</td>
+    <td>1000</td>
+    <td>0011</td>
+    <td>0111</td>
+    <td>0110</td>
+    <td>1001</td>
+    <td>0111</td>
+    <td>0010</td>
+    <td>0110</td>
+    <td>0110</td>
+    <td>0110</td>
   </tr>
 </table>
 </p>
@@ -165,11 +180,9 @@
 
 <p align="justify">Frekvenca vzorčenja se imenuje stopnja vzorčenja (<i>angl. sample rate</i>), kar pomeni, koliko vzorcev na sekundo shraniš. Frekvenca vzorčenja se meri v Hertzih (Hz). 1&nbsp;Hz je en vzorec na sekundo. Večina  zvočnih posnetkov CD-kakovosti se vzorči pri 44,1&nbsp;kHz (44100 vzorcev na sekundo) ali 48&nbsp;kHz (48000 vzorcev na sekundo).</p>
 
-<!--
-Vir: http://www.bbc.co.uk/education/guides/zpfdwmn/revision/3
-//-->
+<h2>Različni formati zvočnih datotek</h2>
 
-
+<p align="justify">Ko zvok zajamemo, da običajno shranimo v nestisnjeno zvočno datoteko v formatu WAV. Zaradi bolj ekonomičnega shranjevanja in izmenjave podatkov je smiselno, da zvočne datoteke stisnemo. Najobičajnejši formati stisnjenih zvočnih datotek so MP3, OGG, AIFF in drugi. Izkaže se, da ima pythonov modul <code>pygame</code>, ki ga bomo uporabljali, najmanj težav pri predvajanju zvočnih datotek v formatu Ogg Vorbis (OGG). Zato bo najbolje, da zvočne datoteke, ki jih želiš uporabiti v tem ali drugih projektih, najprej pretvoriš v ta format. To lahko narediš na primer s programom Audacity, ali pa uporabiš kakšno spletno storitev za pretvarjanje med različnimi formati zvočnih datotek.</p>
 <!-- Right column end -->
                     </div>
                 </div>
@@ -180,19 +193,6 @@ Vir: http://www.bbc.co.uk/education/guides/zpfdwmn/revision/3
 
     </div>
     <!-- /#wrapper -->
-
-    <!-- jQuery -->
-    <script src="../js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="../js/bootstrap.min.js"></script>
-
-    <!-- Navigation / Top Menu -->
-    <script>
-    $(function(){
-        $("#navigation").load("../navigacija.html"); 
-    });
-    </script>
 
 <!-- CookieCuttr -->
 <script type="text/javascript" src="../cc/jquery.cookie.js"></script>

@@ -30,6 +30,24 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+    <!-- jQuery -->
+    <script src="../js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../js/bootstrap.min.js"></script>
+
+    <!-- Prism -->
+    <script src="../js/prism.js"></script>
+
+    <!-- Navigation / Top Menu -->
+    <script>
+    $(function(){
+        $("#navigation").load("../navigacija.html"); 
+        $("#fritzing").scrollLeft(420);
+    });
+    </script>
+
 </head>
 
 <body>
@@ -84,6 +102,27 @@
             </div>
         </div>
 
+        <!-- Modal (popup) window: Image 1 -->
+        <div id="image1" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Mornar, ki pošilja signale Morsejeve kode</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p align="center"><img src="img/Seaman_send_Morse_code_signals.jpg" class="img-responsive"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Zapri</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
         <!-- Page Content -->
         <div id="page-content-wrapper">
             <div class="container-fluid">
@@ -97,7 +136,9 @@
     <li><a href="index2.html">Kaj je Morsejeva koda?</a></li>
     <li><a href="index3.html">Malinin telegraf</a></li>
     <li class="active"><a href="index4.html">Malinin aldis telegraf</a></li>
-    <li><a href="index5.html">Samodejni telegraf</a></li>
+    <li><a href="index5.html">SOS oddajnik</a></li>
+    <li><a href="index6.html">Samodejni telegraf</a></li>
+    <li><a href="summary.html">Povzetek</a></li>
     <li><a href="sources.html">Viri</a></li>
   </ul>
 </nav>
@@ -108,14 +149,15 @@
 <!-- Right column start -->
 <h1>Malinin aldis telegraf</h1>
 
-<p align="justify">Naslednja naloga pri projektu Morsejeve kode bo izdelava Malininega aldis telegrafa. Aldis luč je uporabljala ameriška mornarica za oddajanje Morsejeve kode s pomočjo svetlobnih signalov. Na preizkusno ploščico boš dodal/-a gumb, brenčač in LED diodo ter jih sprogramiral/-a tako, da se bo ob pritisku na gumb oglasil brenčač in prižgala LED dioda.</p>
+<p align="justify">Naslednja naloga pri projektu Morsejeve kode bo izdelava Malininega aldis telegrafa. <a href="#aldis" title="Aldis luč" data-toggle="modal" data-target="#image1">Aldis luč</a> je uporabljala ameriška mornarica za oddajanje Morsejeve kode s pomočjo svetlobnih signalov. Pri tej nalogi bo aldis luč nadomeščala LED dioda. Na preizkusno ploščico boš dodal/-a gumb, brenčač in LED diodo ter jih sprogramiral/-a tako, da se bo ob pritisku na gumb oglasil brenčač in prižgala LED dioda.</p>
 
-<div id="tabs">	
+<div id="tabs">    
 <ul class="nav nav-tabs">
   <li>&nbsp;&nbsp;&nbsp;</li>
   <li><a href="#pieces" data-toggle="tab">Sestavine</a></li>
   <li><a href="#build" data-toggle="tab">Navodila</a></li>
   <li class="active"><a href="#board" data-toggle="tab">Vezje</a></li>
+  <li><a href="#scheme" data-toggle="tab">Shema</a></li>
   <li><a href="#python" data-toggle="tab">Koda</a></li>
 </ul>
 
@@ -167,24 +209,33 @@
 <pre id="fritzing"><br /><img src="img/telegraf2_bb.png" border="0"></pre>
 </div>
 
+<!-- Schematics tab -->
+<div class="tab-pane" id="scheme">
+<pre id="fritzing"><br /><img src="img/telegraf2_sc.png" border="0"></pre>
+</div>
+
 <!-- Python tab -->
 <div class="tab-pane" id="python">
-<pre style="height:450px"><code class="language-python">from gpiozero import Button, Buzzer, LED
+<pre style="height:450px"><code class="language-python"># encoding: utf-8
+from gpiozero import Button, Buzzer, LED
 
 gumb = Button(22)
 zvok = Buzzer(4)
 aldis = LED(27)
 
 def prizgi():
-  zvok.on()
-  aldis.on()
+    zvok.on()
+    aldis.on()
 
 def ugasni():
-  zvok.off()
-  aldis.off()
+    zvok.off()
+    aldis.off()
 
-gumb.when_pressed = prizgi()
-gumb.when_released = ugasni()
+while True:
+    if gumb.is_pressed:
+        prizgi()
+    if not gumb.is_pressed:
+        ugasni()
 </code></pre>
 <p><a href="py/telegraf2.py" class="btn btn-primary" target="_blank"><img src="../img/py16src.png"> Izvorna koda</a></p>
 </div>
@@ -198,23 +249,6 @@ gumb.when_released = ugasni()
 
     </div>
     <!-- /#wrapper -->
-
-    <!-- jQuery -->
-    <script src="../js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="../js/bootstrap.min.js"></script>
-
-    <!-- Prism -->
-    <script src="../js/prism.js"></script>
-
-    <!-- Navigation / Top Menu -->
-    <script>
-    $(function(){
-        $("#navigation").load("../navigacija.html"); 
-		$("#fritzing").scrollLeft(420);
-    });
-    </script>
 
 <!-- CookieCuttr -->
 <script type="text/javascript" src="../cc/jquery.cookie.js"></script>

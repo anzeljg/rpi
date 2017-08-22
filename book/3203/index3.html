@@ -30,6 +30,24 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+    <!-- jQuery -->
+    <script src="../js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../js/bootstrap.min.js"></script>
+
+    <!-- Prism -->
+    <script src="../js/prism.js"></script>
+
+    <!-- Navigation / Top Menu -->
+    <script>
+    $(function(){
+        $("#navigation").load("../navigacija.html"); 
+        $("#fritzing").scrollLeft(420);
+    });
+    </script>
+
 </head>
 
 <body>
@@ -97,7 +115,9 @@
     <li><a href="index2.html">Kaj je Morsejeva koda?</a></li>
     <li class="active"><a href="index3.html">Malinin telegraf</a></li>
     <li><a href="index4.html">Malinin aldis telegraf</a></li>
-    <li><a href="index5.html">Samodejni telegraf</a></li>
+    <li><a href="index5.html">SOS oddajnik</a></li>
+    <li><a href="index6.html">Samodejni telegraf</a></li>
+    <li><a href="summary.html">Povzetek</a></li>
     <li><a href="sources.html">Viri</a></li>
   </ul>
 </nav>
@@ -110,12 +130,13 @@
 
 <p align="justify">Prva naloga pri projektu Morsejeve kode bo izdelava Malininega telegrafa. To pomeni, da boš na preizkusno ploščico dodal/-a gumb in brenčač (<i>angl. buzzer</i>) in ju sprogramiral/-a tako, da se bo ob pritisku na gumb oglasil brenčač.</p>
 
-<div id="tabs">	
+<div id="tabs">    
 <ul class="nav nav-tabs">
   <li>&nbsp;&nbsp;&nbsp;</li>
   <li><a href="#pieces" data-toggle="tab">Sestavine</a></li>
   <li><a href="#build" data-toggle="tab">Navodila</a></li>
   <li class="active"><a href="#board" data-toggle="tab">Vezje</a></li>
+  <li><a href="#scheme" data-toggle="tab">Shema</a></li>
   <li><a href="#python" data-toggle="tab">Koda</a></li>
 </ul>
 
@@ -164,15 +185,24 @@
 <pre id="fritzing"><br /><img src="img/telegraf_bb.png" border="0"></pre>
 </div>
 
+<!-- Schematics tab -->
+<div class="tab-pane" id="scheme">
+<pre id="fritzing"><br /><img src="img/telegraf_sc.png" border="0"></pre>
+</div>
+
 <!-- Python tab -->
 <div class="tab-pane" id="python">
-<pre style="height:450px"><code class="language-python">from gpiozero import Button, Buzzer
+<pre style="height:450px"><code class="language-python"># encoding: utf-8
+from gpiozero import Button, Buzzer
 
 gumb = Button(22)
 zvok = Buzzer(4)
 
-gumb.when_pressed = zvok.on()
-gumb.when_released = zvok.off()
+while True:
+    if gumb.is_pressed:
+        zvok.on()
+    if not gumb.is_pressed:
+        zvok.off()
 </code></pre>
 <p><a href="py/telegraf.py" class="btn btn-primary" target="_blank"><img src="../img/py16src.png"> Izvorna koda</a></p>
 </div>
@@ -186,23 +216,6 @@ gumb.when_released = zvok.off()
 
     </div>
     <!-- /#wrapper -->
-
-    <!-- jQuery -->
-    <script src="../js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="../js/bootstrap.min.js"></script>
-
-    <!-- Prism -->
-    <script src="../js/prism.js"></script>
-
-    <!-- Navigation / Top Menu -->
-    <script>
-    $(function(){
-        $("#navigation").load("../navigacija.html"); 
-		$("#fritzing").scrollLeft(420);
-    });
-    </script>
 
 <!-- CookieCuttr -->
 <script type="text/javascript" src="../cc/jquery.cookie.js"></script>
