@@ -8,19 +8,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="shortcut icon" href="../favicon.ico" />
+    <link rel="shortcut icon" href="favicon.ico" />
 
-    <title>Povzetek</title>
+    <title>Seznam projektov</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
-    <link href="../css/bootstrap-toc.min.css" rel="stylesheet">
-    <link href="../css/bootstrap-cards.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-toc.min.css" rel="stylesheet">
+    <link href="css/dataTables.bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
 
-    <link href="../css/style.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -30,10 +30,39 @@
     <![endif]-->
 
     <!-- jQuery -->
-    <script src="../js/jquery.js"></script>
+    <script src="js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="../js/bootstrap.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.dataTables.min.js"></script>
+    <script src="js/dataTables.bootstrap.min.js"></script>
+
+    <script>
+    $(document).ready(function() {
+        $('#projects').DataTable({
+            language: {
+                "decimal":        "",
+                "emptyTable":     "V tabeli ni podatkov",
+                "info":           "Prikazujem _START_ do _END_ od _TOTAL_ projektov",
+                "infoEmpty":      "Prikazujem 0 do 0 od 0 projektov",
+                "infoFiltered":   "(filtrirano izmed vseh _MAX_ projektov)",
+                "infoPostFix":    "",
+                "thousands":      ",",
+                "lengthMenu":     "Prikaži _MENU_ projektov",
+                "loadingRecords": "Nalaganje...",
+                "processing":     "Obdelovanje...",
+                "search":         "Najdi:",
+                "zeroRecords":    "Ne najdem ustreznih projektov",
+                "paginate": {
+                    "first":      "Začetek",
+                    "last":       "Konec",
+                    "next":       "Naprej",
+                    "previous":   "Nazaj"
+                },
+            }
+        });
+    });
+    </script>
 
 </head>
 
@@ -51,7 +80,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="../index.html"><img src="../img/malina.png"></a>
+            <a class="navbar-brand" href="index.html"><img src="img/malina.png"></a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
 
@@ -59,21 +88,21 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Priprava <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="../3101/index.html">Priprava strojne opreme</a></li>
-                        <li><a href="../3102/index.html">Namestitev programske opreme</a></li>
+                        <li><a href="3101/index.html">Priprava strojne opreme</a></li>
+                        <li><a href="3102/index.html">Namestitev programske opreme</a></li>
                         <li role="separator" class="divider"></li>
-                        <li><a href="../3103/index.html">Uvod v fizično računalništvo</a></li>
-                        <li><a href="../3104/index.html">Fizično računalništvo s pitonom</a></li>
-                        <li><a href="../3105/index.html">Fizično računalništvo z mačkom</a></li>
+                        <li><a href="3103/index.html">Uvod v fizično računalništvo</a></li>
+                        <li><a href="3104/index.html">Fizično računalništvo s pitonom</a></li>
+                        <li><a href="3105/index.html">Fizično računalništvo z mačkom</a></li>
                     </ul>
                 </li>
-                <li><a href="../projects.html" title="Projekti"> Projekti</a></li>
+                <li class="active"><a href="projects.html" title="Projekti"> Projekti</a></li>
             </ul>
 
 			<ul class="nav navbar-nav navbar-right">
                     <li><a href="#license" title="Licenca" data-toggle="modal" data-target="#copyright"><span class="fa fa-creative-commons"></span> Licenca</a></li>
-                    <li><a href="../colophon.html" title="Kolofon"><span class="fa fa-print"></span> Kolofon</a></li>
-                    <li><a href="../tools.html" title="Orodja"><span class="fa fa-wrench"></span> Orodja</a></li>
+                    <li><a href="colophon.html" title="Kolofon"><span class="fa fa-print"></span> Kolofon</a></li>
+                    <li><a href="tools.html" title="Orodja"><span class="fa fa-wrench"></span> Orodja</a></li>
                     <li><a href="mailto:eUcbenik@lusy.fri.uni-lj.si" title="Komentar"><span class="fa fa-commenting-o"></span> Komentar</a></li>
                     <li><a href="http://github.com/anzeljg/rpi/archive/v1.00.zip" title="Prenos"><span class="fa fa-download"></span> Prenos</a></li>
                 </ul>
@@ -95,7 +124,7 @@
                         <p>To delo je na voljo pod pogoji slovenske licence Creative Commons 2.5:</p>
                         <p><strong>priznanje avtorstva - nekomercialno - deljenje pod enakimi pogoji.</strong></p>
                         <p align="justify">Celotna licenca je na voljo na spletu na naslovu <a href="http://creativecommons.org/licenses/by-nc-sa/2.5/si/" target="_blank">http://creativecommons.org/licenses/by-nc-sa/2.5/si/</a>. V skladu s to licenco je dovoljeno vsakemu uporabniku delo razmnoževati, distribuirati, javno priobčevati, dajati v najem in tudi predelovati, vendar samo v nekomercialne namene in ob pogoju, da navede avtorja oziroma avtorje in izdajatelja tega dela. Če uporabnik delo predela, kar pomeni, da ga spremeni, preoblikuje, prevede ali uporabi to delo v svojem delu, lahko predelavo dela ponudi na voljo le pod pogoji, ki so enaki pogojem iz te licence oziroma pod enako licenco.</p>
-                        <p><img src="../img/by-nc-sa.eu.png" height="35" border="0"></p>
+                        <p><img src="img/by-nc-sa.eu.png" height="35" border="0"></p>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Zapri</button>
@@ -109,84 +138,57 @@
         <div id="page-content-wrapper">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-md-4">
-<!-- Left column start -->
-<nav id="toc" data-toggle="toc">
-  <ul class="nav">
-    <li><a href="index.html">Prometna signalizacija</a></li>
-    <li><a href="index1.html">Komuniciranje</a></li>
-    <li><a href="index2.html">Utripajoča luč</a></li>
-    <li><a href="index3.html">Vozila na nujni vožnji</a></li>
-    <li><a href="index4.html">Signalizacija na gradbišču</a></li>
-    <li><a href="index5.html">Semafor za pešce</a></li>
-    <li><a href="index6.html">Semafor za avtomobile</a></li>
-    <li><a href="index7.html">Semafor za pešce in avtomobile</a></li>
-    <li><a href="index8.html">Semafor z gumbom za slepe</a></li>
-    <li><a href="index9.html">Cestna razsvetljava</a></li>
-    <li class="active"><a href="summary.html">Povzetek</a></li>
-    <li><a href="sources.html">Viri</a></li>
-  </ul>
-</nav>
-<!-- Left column end -->
-                    </div>
-                    <div class="col-md-8">
-                        <br />
-<!-- Right column start -->
-<h1>Povzetek</h1>
+                    <div class="col-md-12">
+<!-- Content column start -->
+<h1>Seznam projektov</h1>
 
-<div class="row">
-  <div class="col-sm-5">
-    <div class="card" style="width: 30rem;">
-      <img class="card-img-top" src="../img/cards/komuniciranje.jpg" alt="Komuniciranje">
-      <div class="card-block">
-        <p class="card-text">Spoznal(-a) si različne vrste komuniciranja in uporabil(-a) različne oblike neverbalnega komuniciranja.</p>
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-5">
-    <div class="card" style="width: 30rem;">
-      <img class="card-img-top" src="../img/cards/izvajanje.jpg" alt="Izvajanje programa">
-      <div class="card-block">
-        <p class="card-text">Naučil(-a) si se napisati program, v njem najti morebitne napake in jih popraviti ter program izvesti.</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<br />
-
-<div class="row">
-  <div class="col-sm-5">
-    <div class="card" style="width: 30rem;">
-      <img class="card-img-top" src="../img/cards/pogoji.jpg" alt="Pogojni stavki">
-      <div class="card-block">
-        <p class="card-text">Naučil(-a) si se uporabljati pogojne stavke in ustrezne pogoje za usmerjanje izvajanja programa.</p>
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-5">
-    <div class="card" style="width: 30rem;">
-      <img class="card-img-top" src="../img/cards/zanke.jpg" alt="Zanke">
-      <div class="card-block">
-        <p class="card-text">Naučil(-a) si se uporabljati zanke za ponavljanje oziroma večkratno izvajanje določenih delov programa.</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<br />
-
-<div class="row">
-  <div class="col-sm-5">
-    <div class="card" style="width: 30rem;">
-      <img class="card-img-top" src="../img/cards/funkcije.jpg" alt="Funkcije">
-      <div class="card-block">
-        <p class="card-text">Naučil(-a) si se uporabljati funkcije, ki jih lahko uporabiš pisanje za preglednejših programov.</p>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- Right column end -->
+<table id="projects" class="table table-striped table-bordered" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th width="20%">Projekt</th>
+      <th width="10%">Osnove</th>
+      <th width="10%">Vejitve</th>
+      <th width="10%">Zanke</th>
+      <th width="10%">Tabele</th>
+      <th width="10%">Funkcije</th>
+      <th width="10%">Nizi</th>
+      <th width="20%">Navezave</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="3201/index.html">Prometna signalizacija</a></td>
+      <td><span class="fa fa-check"></span></td>
+      <td><span class="fa fa-check"></span></td>
+      <td><span class="fa fa-check"></span></td>
+      <td>&nbsp;</td>
+      <td><span class="fa fa-check"></span></td>
+      <td>&nbsp;</td>
+      <td>komuniciranje, vrste in oblike komuniciranja</td>
+    </tr>
+    <tr>
+      <td><a href="3202/index.html">Glasbena skrinjica</a></td>
+      <td><span class="fa fa-check"></span></td>
+      <td><span class="fa fa-check"></span></td>
+      <td><span class="fa fa-check"></span></td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>zapis zvoka v računalniku, formati zvočnih datotek</td>
+    </tr>
+    <tr>
+      <td><a href="3203/index.html">Morsejeva koda</a></td>
+      <td><span class="fa fa-check"></span></td>
+      <td><span class="fa fa-check"></span></td>
+      <td><span class="fa fa-check"></span></td>
+      <td><span class="fa fa-check"></span></td>
+      <td><span class="fa fa-check"></span></td>
+      <td><span class="fa fa-check"></span></td>
+      <td>kodiranje podatkov, stiskanje podatkov z izgubami in brez izgub, Huffmanova koda</td>
+    </tr>
+  </tbody>
+</table>
+<!-- Content column end -->
                     </div>
                 </div>
             </div>
@@ -198,10 +200,10 @@
     <!-- /#wrapper -->
 
 <!-- CookieCuttr -->
-<script type="text/javascript" src="../cc/jquery.cookie.js"></script>
-<script type="text/javascript" src="../cc/jquery.cookiecuttr.js"></script>
-<link rel="stylesheet" href="../cc/cookiecuttr.css">
-<script type="text/javascript" src="../cc/google-analytics.js"></script>
+<script type="text/javascript" src="cc/jquery.cookie.js"></script>
+<script type="text/javascript" src="cc/jquery.cookiecuttr.js"></script>
+<link rel="stylesheet" href="cc/cookiecuttr.css">
+<script type="text/javascript" src="cc/google-analytics.js"></script>
 <script type="text/javascript">
 $(document).ready(function () {
     jQuery.cookieCuttr({
