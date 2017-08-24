@@ -1,12 +1,12 @@
 # encoding: utf-8
-from gpiozero import LED
-from time import sleep
+import gpiozero
+import time
 
-led1 = LED(26)
-led2 = LED(19)
-led3 = LED(22)
-led4 = LED(27)
-led5 = LED(17)
+led1 = gpiozero.LED(26)
+led2 = gpiozero.LED(19)
+led3 = gpiozero.LED(22)
+led4 = gpiozero.LED(27)
+led5 = gpiozero.LED(17)
 
 # poskrbimo, da so vse LED diode ugasnjene
 led1.off()
@@ -18,16 +18,20 @@ led5.off()
 while True:
     led5.off()
     led1.on()
-    sleep(1)
+    time.sleep(1)
+
     led1.off()
     led2.on()
-    sleep(1)
+    time.sleep(1)
+
     led2.off()
     led3.on()
-    sleep(1)
+    time.sleep(1)
+
     led3.off()
     led4.on()
-    sleep(1)
+    time.sleep(1)
+
     led4.off()
     led5.on()
-    sleep(1)
+    time.sleep(1)

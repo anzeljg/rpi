@@ -75,7 +75,7 @@
                         <li role="separator" class="divider"></li>
                         <li><a href="../3103/index.html">Uvod v fizično računalništvo</a></li>
                         <li><a href="../3104/index.html">Fizično računalništvo s pitonom</a></li>
-                        <li><a href="../3105/index.html">Fizično računalništvo z mačkom</a></li>
+                        <!--<li><a href="../3105/index.html">Fizično računalništvo z mačkom</a></li>-->
                     </ul>
                 </li>
                 <li><a href="../projects.html" title="Projekti"> Projekti</a></li>
@@ -233,11 +233,11 @@
 <!-- Python tab -->
 <div class="tab-pane" id="python">
 <pre style="height:450px"><code class="language-python"># encoding: utf-8
-from gpiozero import PWMLED, LightSensor
-from time import sleep
+import gpiozero
+import time
 
-led = PWMLED(27)
-ldr = LightSensor(17)
+led = gpiozero.PWMLED(27)
+ldr = gpiozero.LightSensor(17)
 
 while True:
     if ldr.value >= 0.75:
@@ -246,7 +246,7 @@ while True:
         led.value = 0.5 # sveti na pol
     else:
         led.value = 1   # sveti
-    sleep(1)
+    time.sleep(1)
 </code></pre>
 <p><a href="py/signalizacija8.py" class="btn btn-primary" target="_blank"><img src="../img/py16src.png"> Izvorna koda</a></p>
 </div>

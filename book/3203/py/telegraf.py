@@ -1,8 +1,8 @@
 # encoding: utf-8
-from gpiozero import Button, Buzzer
+import gpiozero
 
-gumb = Button(22)
-zvok = Buzzer(4)
+gumb = gpiozero.Button(22)
+zvok = gpiozero.Buzzer(4)
 
 while True:
     if gumb.is_pressed:

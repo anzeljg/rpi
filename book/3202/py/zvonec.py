@@ -1,9 +1,9 @@
 # encoding: utf-8
-from gpiozero import Button
+import gpiozero
 import pygame
 pygame.init()
 
-gumb = Button(22)
+gumb = gpiozero.Button(22)
 zvonec = pygame.mixer.Sound('doorbell.ogg')
 
 while True:

@@ -1,6 +1,6 @@
 # encoding: utf-8
-from gpiozero import Buzzer, LED
-from time import sleep
+import gpiozero
+import time
 
 def prizgi():
     aldis.on()
@@ -14,14 +14,14 @@ def oddaj(zaporedje):
     for znak in zaporedje:
         prizgi()
         if znak == '.':
-            sleep(enota)
+            time.sleep(enota)
         if znak == '-':
-            sleep(3 * enota)
+            time.sleep(3 * enota)
         ugasni()
-        sleep(enota)
+        time.sleep(enota)
 
-zvok = Buzzer(4)
-aldis = LED(27)
+zvok = gpiozero.Buzzer(4)
+aldis = gpiozero.LED(27)
 
 enota = 0.1 # privzeta enota je desetinka sekunde
 
@@ -37,16 +37,18 @@ abeceda = {
     'Y': '-.--',   'Z': '--..',   '0': '-----',
     '1': '.----',  '2': '..---',  '3': '...--',
     '4': '....-',  '5': '.....',  '6': '-....',
-    '7': '--...',  '8': '---..',  '9': '----.',
-    'Č': '-..-',   'Š': '----',   'Ž': '.--'
+    '7': '--...',  '8': '---..',  '9': '----.'
 }
 
 sporocilo = input('Vnesi sporočilo:').upper()
+sporocilo = sporocilo.replace('Č', 'C')
+sporocilo = sporocilo.replace('Š', 'S')
+sporocilo = sporocilo.replace('Ž', 'Z')
 
 for znak in sporocilo:
-    if znak in 'ABCDEFGHIJKLMNOPQRSTUVWXYZČŠŽ0123456789 ':
+    if znak in 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 ':
         if znak == ' ':
-            sleep(7 * enota)
+            time.sleep(7 * enota)
         else:
             oddaj(abeceda[znak])
-            sleep(2 * enota)
+            time.sleep(2 * enota)

@@ -75,7 +75,7 @@
                         <li role="separator" class="divider"></li>
                         <li><a href="../3103/index.html">Uvod v fizično računalništvo</a></li>
                         <li><a href="../3104/index.html">Fizično računalništvo s pitonom</a></li>
-                        <li><a href="../3105/index.html">Fizično računalništvo z mačkom</a></li>
+                        <!--<li><a href="../3105/index.html">Fizično računalništvo z mačkom</a></li>-->
                     </ul>
                 </li>
                 <li><a href="../projects.html" title="Projekti"> Projekti</a></li>
@@ -237,8 +237,8 @@
 <!-- Python tab -->
 <div class="tab-pane" id="python">
 <pre style="height:450px"><code class="language-python"># encoding: utf-8
-from gpiozero import Buzzer, LED
-from time import sleep
+import gpiozero
+import time
 
 def prizgi():
     aldis.on()
@@ -248,8 +248,8 @@ def ugasni():
     aldis.off()
     zvok.off()
 
-zvok = Buzzer(4)
-aldis = LED(27)
+zvok = gpiozero.Buzzer(4)
+aldis = gpiozero.LED(27)
 
 enota = 0.1 # privzeta enota je desetinka sekunde
 
@@ -257,12 +257,12 @@ while True:
     for znak in '...---...':
         prizgi()
         if znak == '.':
-            sleep(enota)
+            time.sleep(enota)
         if znak == '-':
-            sleep(3 * enota)
+            time.sleep(3 * enota)
         ugasni()
-        sleep(enota)
-    sleep(2 * enota)
+        time.sleep(enota)
+    time.sleep(2 * enota)
 </code></pre>
 <p><a href="py/telegraf3.py" class="btn btn-primary" target="_blank"><img src="../img/py16src.png"> Izvorna koda</a></p>
 </div>

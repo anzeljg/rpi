@@ -1,6 +1,6 @@
 # encoding: utf-8
-from gpiozero import Buzzer, LED
-from time import sleep
+import gpiozero
+import time
 
 def prizgi():
     aldis.on()
@@ -10,8 +10,8 @@ def ugasni():
     aldis.off()
     zvok.off()
 
-zvok = Buzzer(4)
-aldis = LED(27)
+zvok = gpiozero.Buzzer(4)
+aldis = gpiozero.LED(27)
 
 enota = 0.1 # privzeta enota je desetinka sekunde
 
@@ -19,9 +19,9 @@ while True:
     for znak in '...---...':
         prizgi()
         if znak == '.':
-            sleep(enota)
+            time.sleep(enota)
         if znak == '-':
-            sleep(3 * enota)
+            time.sleep(3 * enota)
         ugasni()
-        sleep(enota)
-    sleep(2 * enota)
+        time.sleep(enota)
+    time.sleep(2 * enota)

@@ -1,13 +1,11 @@
 # encoding: utf-8
-from gpiozero import LED, Button, Buzzer
-from time import sleep
+import gpiozero
 
-led1 = LED(17)
-led2 = LED(22)
-led3 = LED(27)
-
-led4 = LED(19)
-led5 = LED(26)
+led1 = gpiozero.LED(17)
+led2 = gpiozero.LED(22)
+led3 = gpiozero.LED(27)
+led4 = gpiozero.LED(19)
+led5 = gpiozero.LED(26)
 
 led1.off()
 led2.off()

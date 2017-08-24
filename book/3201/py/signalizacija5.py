@@ -1,22 +1,25 @@
 # encoding: utf-8
-from gpiozero import LED
-from time import sleep
+import gpiozero
+import time
 
-zelena = LED(17)
-rdeca = LED(22)
-oranzna = LED(27)
+zelena = gpiozero.LED(17)
+rdeca = gpiozero.LED(22)
+oranzna = gpiozero.LED(27)
 
 while True:
     rdeca.on()
     oranzna.off()
     zelena.off()
-    sleep(3)
+    time.sleep(3)
+
     oranzna.on()
-    sleep(1)
+    time.sleep(1)
+
     rdeca.off()
     oranzna.off()
     zelena.on()
-    sleep(3)
+    time.sleep(3)
+
     oranzna.on()
     zelena.off()
-    sleep(1)
+    time.sleep(1)

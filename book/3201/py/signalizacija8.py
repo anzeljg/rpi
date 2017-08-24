@@ -1,9 +1,9 @@
 # encoding: utf-8
-from gpiozero import PWMLED, LightSensor
-from time import sleep
+import gpiozero
+import time
 
-led = PWMLED(27)
-ldr = LightSensor(17)
+led = gpiozero.PWMLED(27)
+ldr = gpiozero.LightSensor(17)
 
 while True:
     if ldr.value >= 0.75:
@@ -12,4 +12,4 @@ while True:
         led.value = 0.5 # sveti na pol
     else:
         led.value = 1   # sveti
-    sleep(1)
+    time.sleep(1)

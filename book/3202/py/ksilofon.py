@@ -1,16 +1,16 @@
 # encoding: utf-8
-from gpiozero import Button
+import gpiozero
 import pygame
 pygame.init()
 
-gumb_c1 = Button(19) # ali Button(25)
-gumb_d1 = Button(13) # ali Button(24)
-gumb_e1 = Button(6)  # ali Button(23)
-gumb_f1 = Button(5)  # ali Button(18)
-gumb_g1 = Button(22)
-gumb_a1 = Button(27)
-gumb_h1 = Button(17)
-gumb_c2 = Button(4)
+gumb_c1 = gpiozero.Button(19) # ali Button(25)
+gumb_d1 = gpiozero.Button(13) # ali Button(24)
+gumb_e1 = gpiozero.Button(6)  # ali Button(23)
+gumb_f1 = gpiozero.Button(5)  # ali Button(18)
+gumb_g1 = gpiozero.Button(22)
+gumb_a1 = gpiozero.Button(27)
+gumb_h1 = gpiozero.Button(17)
+gumb_c2 = gpiozero.Button(4)
 
 ton_c1 = pygame.mixer.Sound('c1.ogg')
 ton_d1 = pygame.mixer.Sound('d1.ogg')

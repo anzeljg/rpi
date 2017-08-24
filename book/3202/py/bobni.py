@@ -1,12 +1,12 @@
 # encoding: utf-8
-from gpiozero import Button
+import gpiozero
 import pygame
 pygame.init()
 
-gumb1 = Button(4)
-gumb2 = Button(17)
-gumb3 = Button(27)
-gumb4 = Button(22)
+gumb1 = gpiozero.Button(4)
+gumb2 = gpiozero.Button(17)
+gumb3 = gpiozero.Button(27)
+gumb4 = gpiozero.Button(22)
 
 zvok1 = pygame.mixer.Sound('crash.ogg')
 zvok2 = pygame.mixer.Sound('snare.ogg')

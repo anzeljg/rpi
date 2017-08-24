@@ -1,9 +1,8 @@
 # encoding: utf-8
-from gpiozero import Buzzer, LED
-from time import sleep
+import gpiozero
 
-zvok = Buzzer(4)
-aldis = LED(27)
+zvok = gpiozero.Buzzer(4)
+aldis = gpiozero.LED(27)
 
 zvok.off()
 aldis.off()

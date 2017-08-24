@@ -1,9 +1,9 @@
 # encoding: utf-8
-from gpiozero import Button, Buzzer, LED
+import gpiozero
 
-gumb = Button(22)
-zvok = Buzzer(4)
-aldis = LED(27)
+gumb = gpiozeroButton(22)
+zvok = gpiozero.Buzzer(4)
+aldis = gpiozero.LED(27)
 
 def prizgi():
     zvok.on()
@@ -18,4 +18,3 @@ while True:
         prizgi()
     if not gumb.is_pressed:
         ugasni()
-

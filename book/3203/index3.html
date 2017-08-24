@@ -75,7 +75,7 @@
                         <li role="separator" class="divider"></li>
                         <li><a href="../3103/index.html">Uvod v fizično računalništvo</a></li>
                         <li><a href="../3104/index.html">Fizično računalništvo s pitonom</a></li>
-                        <li><a href="../3105/index.html">Fizično računalništvo z mačkom</a></li>
+                        <!--<li><a href="../3105/index.html">Fizično računalništvo z mačkom</a></li>-->
                     </ul>
                 </li>
                 <li><a href="../projects.html" title="Projekti"> Projekti</a></li>
@@ -207,10 +207,10 @@
 <!-- Python tab -->
 <div class="tab-pane" id="python">
 <pre style="height:450px"><code class="language-python"># encoding: utf-8
-from gpiozero import Button, Buzzer
+import gpiozero
 
-gumb = Button(22)
-zvok = Buzzer(4)
+gumb = gpiozero.Button(22)
+zvok = gpiozero.Buzzer(4)
 
 while True:
     if gumb.is_pressed:
