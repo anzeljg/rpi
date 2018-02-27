@@ -1,1 +1,0 @@
-# encoding: utf-8import gpiozeroimport timeled1 = gpiozero.LED(17)led2 = gpiozero.LED(27)while True:    led1.on()    led2.off()    time.sleep(0.5)    led1.off()    led2.on()    time.sleep(0.5)

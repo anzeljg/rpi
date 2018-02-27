@@ -1,0 +1,93 @@
+/* Lobster font import start */
+/* cyrillic */
+@font-face {
+  font-family: 'Lobster';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Lobster'), local('Lobster-Regular'), url('../fonts/Lobster-cyrillic.woff2') format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Lobster';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Lobster'), local('Lobster-Regular'), url('../fonts/Lobster-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Lobster';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Lobster'), local('Lobster-Regular'), url('../fonts/Lobster-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+/* Lobster font import end */
+
+
+#page-content-wrapper {
+  padding-top: 70px;
+  padding-left: 50px;
+  padding-right: 150px;
+  padding-bottom: 50px;
+}
+
+.navbar {
+  margin-bottom: 0px;
+}
+
+.nav>li>a {
+  color: #555;
+}
+
+.tab-pane {
+  padding-top: 10px;
+}
+
+li img,
+p.img {
+  padding: 20px 0;
+}
+
+pre#fritzing {
+  background-color: #ffffff;
+}
+
+h1 {
+  font-size: 36px; /* original: 36px */
+  font-family: 'Lobster';
+}
+
+h2 {
+  font-size: 24px; /* original: 30px */
+  font-weight: bold;
+}
+/* SEE: https://css-tricks.com/hash-tag-links-padding/ */
+h2.anchor:before { 
+  display: block; 
+  content: " "; 
+  margin-top: -70px; 
+  height: 70px; 
+  visibility: hidden; 
+}
+
+h4 {
+  padding-top: 10px;
+}
+
+.carousel-indicators {
+  bottom: -5px;
+}
+.carousel-caption {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: #fff;
+  text-align: center;
+  background: rgba(0,0,0,0.4);
+}
